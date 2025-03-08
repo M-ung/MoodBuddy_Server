@@ -91,8 +91,8 @@ public class QuddyTIBatchJDBCRepositoryTest {
     @Test
     @DisplayName("한 달 기준 일기 감정 갯수 세기 테스트")
     public void 한_달_기준_일기_감정_갯수_세기_테스트() {
-        LocalDate start = LocalDate.of(2025, 2, 1);
-        LocalDate end = LocalDate.of(2025, 2, 28);
+        LocalDate start = LocalDate.of(2024, 2, 1);
+        LocalDate end = LocalDate.of(2026, 2, 28);
         long happinessCount = quddyTIBatchJDBCRepository.findEmotionCountsByUserIdAndDate(2L, DiaryEmotion.HAPPINESS, start, end);
         assertEquals(10L, happinessCount);
         long sadnessCount = quddyTIBatchJDBCRepository.findEmotionCountsByUserIdAndDate(2L, DiaryEmotion.SADNESS, start, end);
@@ -103,8 +103,8 @@ public class QuddyTIBatchJDBCRepositoryTest {
     @Test
     @DisplayName("한 달 기준 일기 주제 갯수 세기 테스트")
     public void 한_달_기준_일기_주제_갯수_세기_테스트() {
-        LocalDate start = LocalDate.of(2025, 2, 1);
-        LocalDate end = LocalDate.of(2025, 2, 28);
+        LocalDate start = LocalDate.of(2024, 2, 1);
+        LocalDate end = LocalDate.of(2026, 2, 28);
         long dailyCount = quddyTIBatchJDBCRepository.findSubjectCountsByUserIdAndDate(2L, DiarySubject.DAILY, start, end);
         assertEquals(10L, dailyCount);
         long travelCount = quddyTIBatchJDBCRepository.findSubjectCountsByUserIdAndDate(2L, DiarySubject.TRAVEL, start, end);
