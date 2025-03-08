@@ -43,6 +43,14 @@
 <img src="https://github.com/user-attachments/assets/13de24d9-5fd4-43c7-a5da-e324f6b4d867" alt="아키텍처 구조" width="50%">
 
 <br>
+
+## 🔥 TroubleShooting
+- 정목(M-ung)
+  - 📍 Service 계층이 무겁다면, Facade 패턴 어때?
+    -  https://velog.io/@_mung/TroubleShooting-MoodBuddy-Service-%EA%B3%84%EC%B8%B5%EC%9D%B4-%EB%AC%B4%EA%B2%81%EB%8B%A4%EB%A9%B4-Facade-%ED%8C%A8%ED%84%B4-%EC%96%B4%EB%95%8C
+
+
+<br>
 <br>
 
 <details>
@@ -165,5 +173,5 @@
       - 예시
           - UserResSaveDTO
           - PostReqSaveDTO
-
+  
 </details>
