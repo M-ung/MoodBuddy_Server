@@ -28,7 +28,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 @ActiveProfiles("test")
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class DiaryCurrentTest {
-    private static final int THREAD_COUNT = 5;
+    private static final int THREAD_COUNT = 15;
     @Autowired
     private DiaryService diaryService;
     @Autowired

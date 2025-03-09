@@ -15,7 +15,7 @@ public class QuddyTIUpdateBatchScheduler {
     private final JobLauncher jobLauncher;
     private final Job quddyTIUpdateJob;
 
-    @Scheduled(cron = "0 53 2 * * *")
+    @Scheduled(cron = "0 0 0 1 * ?")
     public void runBatchJob() throws JobExecutionException {
         JobParameters jobParameters = new JobParametersBuilder()
                 .addLong("time", System.currentTimeMillis())

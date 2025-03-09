@@ -114,10 +114,10 @@ public class QuddyTI extends BaseTimeEntity {
         if (QuddyTIType.NO_DIARY.getValue().equals(diaryType)) {
             return QuddyTIType.NO_DIARY.getValue();
         }
-        String mostFrequentSubject = findMostFrequentEntry(subjectCounts)
+        String mostFrequentSubject = getMostFrequentEntry(subjectCounts)
                 .map(subject -> subject.name().substring(0, 1))
                 .orElseThrow(() -> new QuddyTIInvalidateException(ErrorCode.QUDDYTI_INVALIDATE));
-        String mostFrequentEmotion = findMostFrequentEntry(emotionCounts)
+        String mostFrequentEmotion = getMostFrequentEntry(emotionCounts)
                 .map(this::getEmotionAbbreviation)
                 .orElseThrow(() -> new QuddyTIInvalidateException(ErrorCode.QUDDYTI_INVALIDATE));
 
@@ -129,7 +129,7 @@ public class QuddyTI extends BaseTimeEntity {
         return totalDiaryCount == 0 ? QuddyTIType.NO_DIARY.getValue() : (totalDiaryCount >= 15 ? QuddyTIType.TYPE_J.getValue() : QuddyTIType.TYPE_P.getValue());
     }
 
-    private <T> Optional<T> findMostFrequentEntry(Map<T, Long> counts) {
+    private <T> Optional<T> getMostFrequentEntry(Map<T, Long> counts) {
         return counts.entrySet().stream()
                 .max(Map.Entry.comparingByValue())
                 .map(Map.Entry::getKey);
