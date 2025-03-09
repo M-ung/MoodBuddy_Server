@@ -50,6 +50,8 @@
     -  https://velog.io/@_mung/TroubleShooting-MoodBuddy-Service-%EA%B3%84%EC%B8%B5%EC%9D%B4-%EB%AC%B4%EA%B2%81%EB%8B%A4%EB%A9%B4-Facade-%ED%8C%A8%ED%84%B4-%EC%96%B4%EB%95%8C
   - 📍 사용자 피드백 🔊 : 일기 저장이 너무 느려요..😭😭
     -  https://velog.io/@_mung/TroubleShooting-MoodBuddy-%EC%82%AC%EC%9A%A9%EC%9E%90-%ED%94%BC%EB%93%9C%EB%B0%B1-%EC%9D%BC%EA%B8%B0-%EC%A0%80%EC%9E%A5%EC%9D%B4-%EB%84%88%EB%AC%B4-%EB%8A%90%EB%A0%A4%EC%9A%94
+  - 📍 동시에 다른 기기 2대로 일기에 접근한다면..?
+    - https://velog.io/@_mung/TroubleShooting-MoodBuddy-%EB%8F%99%EC%8B%9C%EC%97%90-%EB%8B%A4%EB%A5%B8-%EA%B8%B0%EA%B8%B0-2%EB%8C%80%EB%A1%9C-%EC%9D%BC%EA%B8%B0%EC%97%90-%EC%A0%91%EA%B7%BC%ED%95%9C%EB%8B%A4%EB%A9%B4 
     
 <br>
 <br>
