@@ -1,18 +1,42 @@
 # 📔 MoodBuddy - Server
 
 ## 🖥️ 프로젝트 소개
-사용자가 쿼디와 함께 하루의 기록과 고민을 편리하게 작성할 수 있는 감정 일기 웹 서비스입니다.
+사용자의 공간에서 쿼디랑 함께 하루의 기록과 고민을 편리하게  작성할 수 있는 일기 웹 서비스입니다 👋🏾👋🏾
 
+
+### 👤 쿼디를 소개합니다 ‼️
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-  <img src="https://github.com/user-attachments/assets/61b83563-2496-4d61-aa91-29e4392e656f" width="30%">
-  <img src="https://github.com/user-attachments/assets/5c030d7a-882c-4ad2-af45-4086d8b97561" width="30%">
-  <img src="https://github.com/user-attachments/assets/dc002fed-dc2c-4511-816c-e321090d119d" width="30%">
-  <img src="https://github.com/user-attachments/assets/26d15186-8bcf-4c3a-91a8-b3cd98b69e89" width="30%">
+  <img src="https://github.com/user-attachments/assets/2eba0acb-59a1-4c9c-af8b-1b1cc720e896" width="30%">
+  <img src="https://github.com/user-attachments/assets/648cca1f-0ae2-418a-84d0-3746fdd5150e" width="30%">
+  <img src="https://github.com/user-attachments/assets/5a006f54-4704-40a4-8b25-f2124188607a" width="30%">
+  <img src="https://github.com/user-attachments/assets/591f895e-1bc1-4385-8f98-b0e7a621fc18" width="30%">
+  <img src="https://github.com/user-attachments/assets/7f32a11b-5155-4b9a-8d5d-8cfd34e8666b" width="30%">
+  <img src="https://github.com/user-attachments/assets/ac0d35ff-e729-4a12-837a-d19716f0f0be" width="30%">
+  <img src="https://github.com/user-attachments/assets/71e6e131-0cef-4bcb-ad3d-affb4660ef4b" width="30%">
+</div>
+<br>
+
+### 👤 무드버디는 어떻게 만들어졌을까요 ⁉️
+<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+  <img src="https://github.com/user-attachments/assets/889f58fa-1ee6-4138-8662-7ba0a435f8a5" width="30%">
+  <img src="https://github.com/user-attachments/assets/c8be4195-336d-46ce-bac7-22eac95b44f2" width="30%">
+  <img src="https://github.com/user-attachments/assets/e1296015-bfe4-49b0-94c8-e4d38427bf78" width="30%">
+  <img src="https://github.com/user-attachments/assets/ef256ad5-cb14-4444-a58f-ea07cf7c68ec" width="30%">
+  <img src="https://github.com/user-attachments/assets/4e99e3e1-ce09-49b1-9036-89efde39a226" width="30%">
+</div>
+<br>
+
+### 👤 무드버디가 무엇일까요 ⁉️
+<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+  <img src="https://github.com/user-attachments/assets/42721689-93cd-4244-965c-8e0dce617cb9" width="35%">
+  <img src="https://github.com/user-attachments/assets/592bdea0-8bf2-454e-a7dc-5b54542cd74d" width="35%">
+  <img src="https://github.com/user-attachments/assets/3fd614fb-2a1e-41b6-bc65-a102fad6403d" width="35%">
+  <img src="https://github.com/user-attachments/assets/5730a0df-b17c-4390-8afa-50c5267c1f10" width="35%">
 </div>
 
 <br>
 
-## 📺 무드버디 실제 화면
+### 📺 무드버디 실제 화면
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
   <img src="https://github.com/user-attachments/assets/dc521e90-b4fd-4cd2-94e2-1e2d2a93dbbb" width="30%">
   <img src="https://github.com/user-attachments/assets/8db0dbf0-0c61-420b-9bb1-497f80b802dc" width="30%">
@@ -29,7 +53,7 @@
 
 <br>
 
-## 🎥 시연 영상
+### 🎥 시연 영상
 ![GIFMaker_me](https://github.com/user-attachments/assets/2a61f871-a1ca-402a-98a2-3643112e5b53)
 
 <br>
