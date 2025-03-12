@@ -59,12 +59,12 @@
 <br>
 
 ## 🟢 ERD
-![스크린샷 2025-01-10 오전 12 28 03](https://github.com/user-attachments/assets/7e43f023-2833-4a38-bf90-5dc60daec830)
+<img src="https://github.com/user-attachments/assets/631508f5-af57-4b57-b58b-9ee97b7accc4" width="50%">
 
 <br>
 
-## 🛠️ 아키텍처 구조
-<img src="https://github.com/user-attachments/assets/13de24d9-5fd4-43c7-a5da-e324f6b4d867" alt="아키텍처 구조" width="50%">
+## 🛠️ 아키텍처 
+<img src="https://github.com/user-attachments/assets/13de24d9-5fd4-43c7-a5da-e324f6b4d867" width="50%">
 
 <br>
 
