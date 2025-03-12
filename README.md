@@ -59,7 +59,7 @@
 <br>
 
 ## 🟢 ERD
-<img src="https://github.com/user-attachments/assets/631508f5-af57-4b57-b58b-9ee97b7accc4" width="50%">
+<img src="https://github.com/user-attachments/assets/6a2597eb-ea4e-4bee-93e8-77b6b2bfbadc" width="50%">
 
 <br>
 
