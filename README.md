@@ -77,7 +77,11 @@
   - 📍 동시에 여러 기기로 일기에 접근한다면..?
     - https://velog.io/@_mung/TroubleShooting-MoodBuddy-%EB%8F%99%EC%8B%9C%EC%97%90-%EB%8B%A4%EB%A5%B8-%EA%B8%B0%EA%B8%B0-2%EB%8C%80%EB%A1%9C-%EC%9D%BC%EA%B8%B0%EC%97%90-%EC%A0%91%EA%B7%BC%ED%95%9C%EB%8B%A4%EB%A9%B4
   - 📍 너의 쿼디티아이는 뭐니?!
-    - https://velog.io/@_mung/TroubleShooting-MoodBuddy-%EB%84%88%EC%9D%98-%EC%BF%BC%EB%94%94%ED%8B%B0%EC%95%84%EC%9D%B4%EB%8A%94-%EB%AD%90%EB%8B%88 
+    - https://velog.io/@_mung/TroubleShooting-MoodBuddy-%EB%84%88%EC%9D%98-%EC%BF%BC%EB%94%94%ED%8B%B0%EC%95%84%EC%9D%B4%EB%8A%94-%EB%AD%90%EB%8B%88
+  - 📍 쿼리 수를 2번 -> 1번, 얼마나 달라진다고?!
+    - https://velog.io/@_mung/TroubleShooting-MoodBuddy-%EA%B0%9C%EC%9D%B8-%EA%B3%B5%EA%B0%84%EC%97%90%EC%84%9C%EC%9D%98-%EC%A1%B0%ED%9A%8C-%EC%96%B4%EB%96%BB%EA%B2%8C-%ED%95%B4%EC%95%BC-%ED%95%A0%EA%B9%8C-shken3hr
+  - 📍 개인 공간에서의 조회 어떻게 해야 할까!?
+    - https://velog.io/@_mung/TroubleShooting-MoodBuddy-%EA%B0%9C%EC%9D%B8-%EA%B3%B5%EA%B0%84%EC%97%90%EC%84%9C%EC%9D%98-%EC%A1%B0%ED%9A%8C-%EC%96%B4%EB%96%BB%EA%B2%8C-%ED%95%B4%EC%95%BC-%ED%95%A0%EA%B9%8C
     
 <br>
 <br>
