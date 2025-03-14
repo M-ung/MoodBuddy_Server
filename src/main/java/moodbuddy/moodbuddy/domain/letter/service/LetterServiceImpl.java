@@ -88,7 +88,7 @@ public class LetterServiceImpl implements LetterService {
     private LetterResPageDTO createLetterResPageDto(Long userId, User user) {
         Profile profile = getProfileByUserId(userId);
         String profileImageURL = getProfileImageUrlByUserId(userId);
-        List<LetterResPageAnswerDTO> letterResPageAnswerDTOList = getLetterResPageAnswerDTOListForLetterPage(user.getUserId());
+        List<LetterResPageAnswerDTO> letterResPageAnswerDTOList = getLetterResPageAnswerDTOListForLetterPage(user.getId());
 
         return getLetterResPageDtoForLetterPage(user, profile, profileImageURL, letterResPageAnswerDTOList);
     }
@@ -173,7 +173,7 @@ public class LetterServiceImpl implements LetterService {
 
     private Letter SaveLetter(User user, LetterReqDTO letterReqDTO){
         return letterRepository.save(Letter.builder()
-                .userId(user.getUserId())
+                .userId(user.getId())
                 .letterFormat(letterReqDTO.getLetterFormat())
                 .letterWorryContent(letterReqDTO.getLetterWorryContent())
                 .letterDate(letterReqDTO.getLetterDate())
@@ -257,7 +257,7 @@ public class LetterServiceImpl implements LetterService {
             final Long userId = JwtUtil.getUserId();
 
             User user = getUserByUserId(userId);
-            Letter letter = getLetterByIdAndUserId(letterId, user.getUserId());
+            Letter letter = getLetterByIdAndUserId(letterId, user.getId());
 
             return getLetterResDetailsDtoForLetterDetails(user, letter);
         } catch (Exception e) {

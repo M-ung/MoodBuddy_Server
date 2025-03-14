@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 @Getter
-@NoArgsConstructor // 기본 생성자 추가
+@NoArgsConstructor
 @AllArgsConstructor
 public class PageCustom<T> {
     private List<T> content;

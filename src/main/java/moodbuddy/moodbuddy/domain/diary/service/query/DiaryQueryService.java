@@ -7,7 +7,8 @@ import moodbuddy.moodbuddy.global.common.base.PageCustom;
 import org.springframework.data.domain.Pageable;
 
 public interface DiaryQueryService {
-    PageCustom<DiaryResQueryDTO> getDiaries(final Long userId, Pageable pageable);
-    PageCustom<DiaryResQueryDTO> getDiariesByEmotion(final Long userId, DiaryEmotion diaryEmotion, Pageable pageable);
-    PageCustom<DiaryResQueryDTO> getDiariesByFilter(final Long userId, DiaryReqFilterDTO requestDTO, Pageable pageable);
+    PageCustom<DiaryResQueryDTO> getDiaries(final Long userId, boolean isAscending, Pageable pageable);
+    PageCustom<DiaryResQueryDTO> getDiariesByEmotion(final Long userId, boolean isAscending, DiaryEmotion diaryEmotion, Pageable pageable);
+    PageCustom<DiaryResQueryDTO> getDiariesByFilter(final Long userId, boolean isAscending, DiaryReqFilterDTO requestDTO, Pageable pageable);
+    PageCustom<DiaryResQueryDTO> refreshDiariesCache(final Long userId, boolean isAscending, Pageable pageable);
 }

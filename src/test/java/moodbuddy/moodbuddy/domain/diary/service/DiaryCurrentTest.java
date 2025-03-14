@@ -59,10 +59,8 @@ public class DiaryCurrentTest {
     public void 일기_저장할_때_동시성_테스트() throws InterruptedException {
         CountDownLatch latch = new CountDownLatch(THREAD_COUNT);
         ExecutorService executorService = Executors.newFixedThreadPool(THREAD_COUNT);
-
         AtomicInteger successCount = new AtomicInteger(0);
         AtomicInteger failureCount = new AtomicInteger(0);
-
         for (int i = 0; i < THREAD_COUNT; i++) {
             executorService.submit(() -> {
                 try {
@@ -76,10 +74,8 @@ public class DiaryCurrentTest {
                 }
             });
         }
-
         executorService.shutdown();
         latch.await();
-
         assertThat(successCount.get()).isEqualTo(1);
         assertThat(failureCount.get()).isEqualTo(THREAD_COUNT - 1);
     }
@@ -89,10 +85,8 @@ public class DiaryCurrentTest {
     public void 일기_수정할_때_동시성_테스트() throws InterruptedException {
         CountDownLatch latch = new CountDownLatch(THREAD_COUNT);
         ExecutorService executorService = Executors.newFixedThreadPool(THREAD_COUNT);
-
         AtomicInteger successCount = new AtomicInteger(0);
         AtomicInteger failureCount = new AtomicInteger(0);
-
         for (int i = 0; i < THREAD_COUNT; i++) {
             executorService.submit(() -> {
                 try {
@@ -106,10 +100,8 @@ public class DiaryCurrentTest {
                 }
             });
         }
-
         executorService.shutdown();
         latch.await();
-
         Diary findDiary = diaryService.findDiaryById(1L, diaryId);
         assertThat(findDiary.getTitle()).isEqualTo(updateRequestDTO.diaryTitle());
         assertThat(successCount.get()).isEqualTo(1);
@@ -165,10 +157,8 @@ public class DiaryCurrentTest {
     public void 일기_삭제할_때_동시성_테스트 () throws InterruptedException {
         CountDownLatch latch = new CountDownLatch(THREAD_COUNT);
         ExecutorService executorService = Executors.newFixedThreadPool(THREAD_COUNT);
-
         AtomicInteger successCount = new AtomicInteger(0);
         AtomicInteger failureCount = new AtomicInteger(0);
-
         for (int i = 0; i < THREAD_COUNT; i++) {
             executorService.submit(() -> {
                 try {
@@ -182,10 +172,8 @@ public class DiaryCurrentTest {
                 }
             });
         }
-
         executorService.shutdown();
         latch.await();
-
         Optional<Diary> findDiary = diaryRepository.findById(diaryId);
         assertThat(findDiary.get().getMoodBuddyStatus()).isEqualTo(MoodBuddyStatus.DIS_ACTIVE);
         assertThat(successCount.get()).isEqualTo(1);

@@ -17,11 +17,11 @@ public interface UserRepository extends JpaRepository<User, Long> {
 //    @Query("update User u set u.userLetterNums = :letterNums where u.userId = :userId")
 //    void updateLetterNumsById(@Param("userId") Long userId, @Param("letterNums") Integer letterNums);
 
-    @Query("select u from User u where u.userId = :userId")
+    @Query("select u from User u where u.id = :userId")
     Optional<User> findByUserId(@Param("userId") Long userId);
 
     @Lock(LockModeType.PESSIMISTIC_WRITE)
-    @Query("select u from User u where u.userId = :userId")
+    @Query("select u from User u where u.id = :userId")
     Optional<User> findByUserIdWithPessimisticLock(@Param("userId") Long userId);
 
     @Query("select u from User u where u.kakaoId = :kakaoId")
@@ -39,6 +39,6 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     @Modifying
     @Transactional
-    @Query("update User u set u.letterAlarm = :letterAlarm where u.userId = :userId")
+    @Query("update User u set u.letterAlarm = :letterAlarm where u.id = :userId")
     void updateLetterAlarmByUserId(@Param("userId") Long userId, @Param("letterAlarm") boolean letterAlarm);
 }

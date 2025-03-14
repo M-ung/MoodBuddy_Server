@@ -14,7 +14,7 @@ import moodbuddy.moodbuddy.global.common.base.BaseTimeEntity;
 public class Profile extends BaseTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "profile_id")
+    @Column(name = "id")
     private Long id;
 
     @Column(name = "profile_comment", columnDefinition = "varchar(255)")

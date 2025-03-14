@@ -25,7 +25,6 @@ public class RedisCacheConfig {
         PolymorphicTypeValidator typeValidator = BasicPolymorphicTypeValidator.builder()
                 .allowIfSubType(Object.class)
                 .build();
-
         return new ObjectMapper()
                 .enable(SerializationFeature.INDENT_OUTPUT)
                 .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS)
@@ -38,18 +37,14 @@ public class RedisCacheConfig {
                 .defaultCacheConfig()
                 .disableCachingNullValues()
                 .serializeKeysWith(fromSerializer(new StringRedisSerializer()))
-                .serializeValuesWith(fromSerializer(new GenericJackson2JsonRedisSerializer(objectMapper())))
-                .entryTtl(Duration.ofHours(24));
+                .serializeValuesWith(fromSerializer(new GenericJackson2JsonRedisSerializer(objectMapper())));
     }
 
     @Bean
     public RedisCacheManager cacheManager(RedisConnectionFactory cf) {
         Map<String, RedisCacheConfiguration> cacheConfigurations = new HashMap<>();
-        cacheConfigurations.put("getDiary", defaultCacheConfiguration().entryTtl(Duration.ofHours(24)));
-        cacheConfigurations.put("getDiaries", defaultCacheConfiguration().entryTtl(Duration.ofHours(24)));
-        cacheConfigurations.put("getDiariesByEmotion", defaultCacheConfiguration().entryTtl(Duration.ofMinutes(5)));
-        cacheConfigurations.put("getDiariesByFilter", defaultCacheConfiguration().entryTtl(Duration.ofMinutes(5)));
-
+        int randomTTL = 24 + (int) (Math.random() * 5);
+        cacheConfigurations.put("diaries", defaultCacheConfiguration().entryTtl(Duration.ofHours(randomTTL)));
         return RedisCacheManager.builder(cf)
                 .cacheDefaults(defaultCacheConfiguration())
                 .withInitialCacheConfigurations(cacheConfigurations)

@@ -14,7 +14,7 @@ import moodbuddy.moodbuddy.global.common.base.BaseTimeEntity;
 public class ProfileImage extends BaseTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "profile_image_id")
+    @Column(name = "id")
     private Long id;
 
     @Column(name = "user_id", columnDefinition = "bigint")

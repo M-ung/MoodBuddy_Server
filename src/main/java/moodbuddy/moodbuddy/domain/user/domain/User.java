@@ -17,8 +17,8 @@ import moodbuddy.moodbuddy.global.common.base.BaseTimeEntity;
 public class User extends BaseTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_id")
-    private Long userId;
+    @Column(name = "id")
+    private Long id;
 
     @Column(name = "user_role", columnDefinition = "varchar(50)")
     private String userRole;

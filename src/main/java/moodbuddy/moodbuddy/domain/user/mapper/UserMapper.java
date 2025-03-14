@@ -8,7 +8,7 @@ public class UserMapper {
     private static final ModelMapper modelMapper = new ModelMapper();
 
     public static UserResLoginDTO toUserResLoginDTO(User user) {
-        Long userId = user.getUserId();
+        Long userId = user.getId();
         return UserResLoginDTO.builder()
                 .userId(userId)
                 .accessToken(JwtUtil.createAccessToken(userId))

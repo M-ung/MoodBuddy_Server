@@ -12,7 +12,6 @@ import moodbuddy.moodbuddy.global.error.ErrorCode;
 import moodbuddy.moodbuddy.domain.diary.exception.DiaryConcurrentUpdateException;
 import moodbuddy.moodbuddy.domain.diary.exception.DiaryNotFoundException;
 import moodbuddy.moodbuddy.domain.diary.exception.DiaryTodayExistingException;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.orm.ObjectOptimisticLockingFailureException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -58,11 +57,6 @@ public class DiaryServiceImpl implements DiaryService {
     }
 
     @Override
-    @Cacheable(
-            cacheNames = "getDiary",
-            key = "'userId:'+#userId+'_'+'diaryId:'+#diaryId",
-            unless = "#result == null"
-    )
     public DiaryResDetailDTO getDiary(final Long userId, final Long diaryId) {
         return diaryRepository.getDiaryById(userId, diaryId);
     }

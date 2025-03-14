@@ -7,12 +7,13 @@ import moodbuddy.moodbuddy.domain.diary.dto.response.query.DiaryResQueryDTO;
 import moodbuddy.moodbuddy.global.common.base.type.MoodBuddyStatus;
 import moodbuddy.moodbuddy.global.common.base.PageCustom;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.redis.core.RedisTemplate;
 import java.util.Optional;
 import static moodbuddy.moodbuddy.domain.diary.domain.QDiary.diary;
 
 public class BookMarkRepositoryImpl implements BookMarkRepositoryCustom {
     private final JPAQueryFactory queryFactory;
-    public BookMarkRepositoryImpl(EntityManager em) {
+    public BookMarkRepositoryImpl(EntityManager em, RedisTemplate<String, Object> redisTemplate) {
         this.queryFactory = new JPAQueryFactory(em);
     }
 
@@ -33,8 +34,8 @@ public class BookMarkRepositoryImpl implements BookMarkRepositoryCustom {
                 .limit(pageable.getPageSize())
                 .fetch();
 
-        var total = getTotal(userId);
-        var totalPages = (int) Math.ceil((double) total / pageable.getPageSize());
+        long total = pageable.getPageNumber() == 0 ? getTotal(userId) : -1;
+        int totalPages = total >= 0 ? (int) Math.ceil((double) total / pageable.getPageSize()) : -1;
 
         return new PageCustom<>(results, totalPages, total, pageable.getPageSize(), pageable.getPageNumber());
     }
@@ -44,6 +45,7 @@ public class BookMarkRepositoryImpl implements BookMarkRepositoryCustom {
                 queryFactory.select(diary.count())
                         .from(diary)
                         .where(diary.userId.eq(userId)
+                                .and(diary.bookMark.eq(true))
                                 .and(diary.moodBuddyStatus.eq(MoodBuddyStatus.ACTIVE)))
                         .fetchOne()
         ).orElse(0L);
