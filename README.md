@@ -59,12 +59,12 @@
 <br>
 
 ## 🟢 ERD
-<img src="https://github.com/user-attachments/assets/6a2597eb-ea4e-4bee-93e8-77b6b2bfbadc" width="50%">
+<img src="https://github.com/user-attachments/assets/6a2597eb-ea4e-4bee-93e8-77b6b2bfbadc" width="80%">
 
 <br>
 
 ## 🛠️ 아키텍처 
-<img src="https://github.com/user-attachments/assets/13de24d9-5fd4-43c7-a5da-e324f6b4d867" width="50%">
+<img src="https://github.com/user-attachments/assets/13de24d9-5fd4-43c7-a5da-e324f6b4d867" width="80%">
 
 <br>
 
