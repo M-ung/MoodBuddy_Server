@@ -21,7 +21,6 @@ import java.util.List;
 @Component
 @RequiredArgsConstructor
 @Transactional(readOnly = true)
-@Slf4j
 public class DiaryFacadeImpl implements DiaryFacade {
     private final DiaryService diaryService;
     private final DraftDiaryService draftDiaryService;
