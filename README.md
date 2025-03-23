@@ -82,7 +82,14 @@
     - https://velog.io/@_mung/TroubleShooting-MoodBuddy-%EA%B0%9C%EC%9D%B8-%EA%B3%B5%EA%B0%84%EC%97%90%EC%84%9C%EC%9D%98-%EC%A1%B0%ED%9A%8C-%EC%96%B4%EB%96%BB%EA%B2%8C-%ED%95%B4%EC%95%BC-%ED%95%A0%EA%B9%8C-shken3hr
   - 📍 조회 속도를 높이기 위한 캐싱, 과연 정답일까?
     - https://velog.io/@_mung/TroubleShooting-MoodBuddy-%EA%B0%9C%EC%9D%B8-%EA%B3%B5%EA%B0%84%EC%97%90%EC%84%9C%EC%9D%98-%EC%A1%B0%ED%9A%8C-%EC%96%B4%EB%96%BB%EA%B2%8C-%ED%95%B4%EC%95%BC-%ED%95%A0%EA%B9%8C
-    
+
+## ✨ 성능 개선
+- 정목(M-ung)
+  - 📍 응답 시간 95.9% 개선 ♨️
+    -  https://velog.io/@_mung/%EC%84%B1%EB%8A%A5-%ED%85%8C%EC%8A%A4%ED%8A%B8-MoodBuddy
+  - 📍 90,000 쿼리 발생을 줄이다📉
+    -  https://velog.io/@_mung/%EC%84%B1%EB%8A%A5-%EA%B0%9C%EC%84%A0-MoodBuddy-90000-%EC%BF%BC%EB%A6%AC-%EB%B0%9C%EC%83%9D%EC%9D%84-%EC%A4%84%EC%9D%B4%EB%8B%A4
+
 <br>
 <br>
 
