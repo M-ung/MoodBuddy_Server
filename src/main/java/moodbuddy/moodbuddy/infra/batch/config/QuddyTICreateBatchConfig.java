@@ -24,6 +24,7 @@ import java.time.LocalDate;
 @RequiredArgsConstructor
 @EnableTransactionManagement
 public class QuddyTICreateBatchConfig {
+
     private final JobRepository jobRepository;
     private final DataSource dataSource;
     private final QuddyTIBatchJDBCRepository quddyTIBatchJDBCRepository;
@@ -39,7 +40,7 @@ public class QuddyTICreateBatchConfig {
     @Bean
     public Step quddyTICreateStep() {
         return new StepBuilder("quddyTICreateStep", jobRepository)
-                .<Long, QuddyTI>chunk(50, transactionManager)
+                .<Long, QuddyTI>chunk(100, transactionManager)
                 .reader(userIdReader())
                 .processor(createQuddyTIProcessor())
                 .writer(saveQuddyTIWriter())
@@ -51,8 +52,8 @@ public class QuddyTICreateBatchConfig {
         return new JdbcCursorItemReaderBuilder<Long>()
                 .dataSource(dataSource)
                 .name("userIdReader")
-                .sql("SELECT user_id FROM user WHERE deleted = 0")
-                .rowMapper((rs, rowNum) -> rs.getLong("user_id"))
+                .sql("SELECT id FROM user WHERE deleted = 0")
+                .rowMapper((rs, rowNum) -> rs.getLong("id"))
                 .fetchSize(100)
                 .saveState(false)
                 .build();
@@ -69,11 +70,6 @@ public class QuddyTICreateBatchConfig {
 
     @Bean
     public ItemWriter<QuddyTI> saveQuddyTIWriter() {
-        return items -> {
-            for (QuddyTI quddyTI : items) {
-                Long id = quddyTIBatchJDBCRepository.save(quddyTI);
-                quddyTI.setId(id);
-            }
-        };
+        return items -> quddyTIBatchJDBCRepository.bulkSave(items.getItems());
     }
 }

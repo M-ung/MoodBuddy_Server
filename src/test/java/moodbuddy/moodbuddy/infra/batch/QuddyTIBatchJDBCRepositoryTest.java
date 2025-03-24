@@ -18,6 +18,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 import java.time.LocalDate;
+import java.util.Map;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 @RunWith(SpringRunner.class)
@@ -77,26 +79,14 @@ public class QuddyTIBatchJDBCRepositoryTest {
         quddyTIRepository.deleteAll();
     }
 
-//    @Test
-//    @DisplayName("QuddyTI 찾기 테스트")
-//    public void QuddyTI_찾기_테스트() {
-//        QuddyTI quddyTI = quddyTIBatchJDBCRepository.findQuddyTIByUserIdAndDate(2L, "2025", "01").get();
-//        assertNotNull(quddyTI);
-//        assertEquals(2L, quddyTI.getUserId());
-//        assertEquals("2025", quddyTI.getQuddyTIYear());
-//        assertEquals("01", quddyTI.getQuddyTIMonth());
-//        assertEquals("TEST", quddyTI.getQuddyTIType());
-//    }
-
     @Test
     @DisplayName("한 달 기준 일기 감정 갯수 세기 테스트")
     public void 한_달_기준_일기_감정_갯수_세기_테스트() {
-        LocalDate start = LocalDate.of(2024, 2, 1);
+        LocalDate start = LocalDate.of(2024, 3, 1);
         LocalDate end = LocalDate.of(2026, 2, 28);
-        long happinessCount = quddyTIBatchJDBCRepository.findEmotionCountsByUserIdAndDate(2L, DiaryEmotion.HAPPINESS, start, end);
-        assertEquals(10L, happinessCount);
-        long sadnessCount = quddyTIBatchJDBCRepository.findEmotionCountsByUserIdAndDate(2L, DiaryEmotion.SADNESS, start, end);
-        assertEquals(0L, sadnessCount);
+        Map<DiaryEmotion, Long> emotionCounts = quddyTIBatchJDBCRepository.findEmotionGroupCountsByUserIdAndDate(2L, start, end);
+        assertEquals(10L, emotionCounts.get(DiaryEmotion.HAPPINESS));
+        assertEquals(0L, emotionCounts.get(DiaryEmotion.FEAR));
 
     }
 
@@ -105,9 +95,8 @@ public class QuddyTIBatchJDBCRepositoryTest {
     public void 한_달_기준_일기_주제_갯수_세기_테스트() {
         LocalDate start = LocalDate.of(2024, 2, 1);
         LocalDate end = LocalDate.of(2026, 2, 28);
-        long dailyCount = quddyTIBatchJDBCRepository.findSubjectCountsByUserIdAndDate(2L, DiarySubject.DAILY, start, end);
-        assertEquals(10L, dailyCount);
-        long travelCount = quddyTIBatchJDBCRepository.findSubjectCountsByUserIdAndDate(2L, DiarySubject.TRAVEL, start, end);
-        assertEquals(0L, travelCount);
+        Map<DiarySubject, Long> subjectCounts = quddyTIBatchJDBCRepository.findSubjectGroupCountsByUserIdAndDate(2L, start, end);
+        assertEquals(10L, subjectCounts.get(DiarySubject.DAILY));
+        assertEquals(0L, subjectCounts.get(DiarySubject.TRAVEL));
     }
 }

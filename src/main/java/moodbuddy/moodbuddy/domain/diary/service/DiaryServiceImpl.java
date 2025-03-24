@@ -6,6 +6,7 @@ import moodbuddy.moodbuddy.domain.diary.domain.Diary;
 import moodbuddy.moodbuddy.domain.diary.dto.request.save.DiaryReqSaveDTO;
 import moodbuddy.moodbuddy.domain.diary.dto.request.update.DiaryReqUpdateDTO;
 import moodbuddy.moodbuddy.domain.diary.dto.response.DiaryResDetailDTO;
+import moodbuddy.moodbuddy.domain.diary.exception.image.DiaryConcurrentDeleteException;
 import moodbuddy.moodbuddy.domain.diary.repository.DiaryRepository;
 import moodbuddy.moodbuddy.global.common.base.type.MoodBuddyStatus;
 import moodbuddy.moodbuddy.global.error.ErrorCode;
@@ -52,7 +53,7 @@ public class DiaryServiceImpl implements DiaryService {
             findDiary.updateMoodBuddyStatus(MoodBuddyStatus.DIS_ACTIVE);
             return findDiary.getDate();
         } catch (OptimisticLockException ex) {
-            throw new DiaryConcurrentUpdateException(ErrorCode.DIARY_CONCURRENT_DELETE);
+            throw new DiaryConcurrentDeleteException(ErrorCode.DIARY_CONCURRENT_DELETE);
         }
     }
 

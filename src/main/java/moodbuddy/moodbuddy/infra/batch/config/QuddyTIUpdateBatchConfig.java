@@ -47,7 +47,7 @@ public class QuddyTIUpdateBatchConfig {
     @Bean
     public Step quddyTIUpdateStep() {
         return new StepBuilder("quddyTIUpdateStep", jobRepository)
-                .<QuddyTI, QuddyTI>chunk(50, transactionManager)
+                .<QuddyTI, QuddyTI>chunk(100, transactionManager)
                 .reader(quddyTIReader())
                 .processor(findCountProcessor())
                 .writer(updateQuddyTIWriter())
@@ -60,11 +60,13 @@ public class QuddyTIUpdateBatchConfig {
         return new JdbcCursorItemReaderBuilder<QuddyTI>()
                 .dataSource(dataSource)
                 .name("quddyTIReader")
-                .sql("""
+                .sql(
+                """
                 SELECT id, user_id, quddy_ti_year, quddy_ti_month, mood_buddy_status
                 FROM quddy_ti 
                 WHERE quddy_ti_year = ? AND quddy_ti_month = ? AND mood_buddy_status = ?
-            """)
+                """
+                )
                 .queryArguments(
                         DateUtil.formatYear(dates[0]),
                         DateUtil.formatMonth(dates[1]),
@@ -99,6 +101,6 @@ public class QuddyTIUpdateBatchConfig {
 
     @Bean
     public ItemWriter<QuddyTI> updateQuddyTIWriter() {
-        return items -> items.forEach(quddyTIBatchJDBCRepository::updateQuddyTI);
+        return items -> quddyTIBatchJDBCRepository.bulkUpdate(items.getItems());
     }
 }
