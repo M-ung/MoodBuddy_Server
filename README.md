@@ -64,7 +64,7 @@
 <br>
 
 ## 🛠️ 아키텍처 
-<img src="https://github.com/user-attachments/assets/13de24d9-5fd4-43c7-a5da-e324f6b4d867" width="80%">
+<img src="https://github.com/user-attachments/assets/7aa9fe26-97c0-4a53-af18-2d74fcc38e17" width="80%">
 
 <br>
 
