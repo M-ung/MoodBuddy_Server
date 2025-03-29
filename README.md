@@ -3,8 +3,31 @@
 ## 🖥️ 프로젝트 소개
 사용자의 공간에서 쿼디랑 함께 하루의 기록과 고민을 편리하게  작성할 수 있는 일기 웹 서비스입니다 👋🏾👋🏾
 
+## 🕰️ 개발 기간
+* 24.03 - 25.03 (약 12개월)
+  
+## ⚙️ 개발 환경
+- `Java 21`
+- **IDE** : IntelliJ IDEA
+- **Framework** : Springboot(3.3.7)
+- **Database** : MySQL
+- **ORM** : Hibernate (Spring Data JPA 사용)
+  
+## 🧑‍🤝‍🧑 멤버 구성
+<p>
+    <a href="https://github.com/M-ung">
+      <img src="https://avatars.githubusercontent.com/u/126846468?v=4" width="100">
+    </a>
+    <a href="https://github.com/dylee00">
+      <img src="https://avatars.githubusercontent.com/u/135154209?v=4" width="100">
+    </a>
+    <a href="https://github.com/zzammin">
+      <img src="https://avatars.githubusercontent.com/u/105933726?v=4" width="100"> 
+    </a>
+</p>
+  
 
-### 👤 쿼디를 소개합니다 ‼️
+## 👤 쿼디를 소개합니다 ‼️
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
   <img src="https://github.com/user-attachments/assets/2eba0acb-59a1-4c9c-af8b-1b1cc720e896" width="30%">
   <img src="https://github.com/user-attachments/assets/648cca1f-0ae2-418a-84d0-3746fdd5150e" width="30%">
@@ -14,9 +37,8 @@
   <img src="https://github.com/user-attachments/assets/ac0d35ff-e729-4a12-837a-d19716f0f0be" width="30%">
   <img src="https://github.com/user-attachments/assets/71e6e131-0cef-4bcb-ad3d-affb4660ef4b" width="30%">
 </div>
-<br>
 
-### 👤 무드버디는 어떻게 만들어졌을까요 ⁉️
+## 👤 무드버디는 어떻게 만들어졌을까요 ⁉️
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
   <img src="https://github.com/user-attachments/assets/889f58fa-1ee6-4138-8662-7ba0a435f8a5" width="30%">
   <img src="https://github.com/user-attachments/assets/c8be4195-336d-46ce-bac7-22eac95b44f2" width="30%">
@@ -24,9 +46,8 @@
   <img src="https://github.com/user-attachments/assets/ef256ad5-cb14-4444-a58f-ea07cf7c68ec" width="30%">
   <img src="https://github.com/user-attachments/assets/4e99e3e1-ce09-49b1-9036-89efde39a226" width="30%">
 </div>
-<br>
 
-### 👤 무드버디가 무엇일까요 ⁉️
+## 👤 무드버디가 무엇일까요 ⁉️
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
   <img src="https://github.com/user-attachments/assets/42721689-93cd-4244-965c-8e0dce617cb9" width="35%">
   <img src="https://github.com/user-attachments/assets/592bdea0-8bf2-454e-a7dc-5b54542cd74d" width="35%">
@@ -34,9 +55,7 @@
   <img src="https://github.com/user-attachments/assets/5730a0df-b17c-4390-8afa-50c5267c1f10" width="35%">
 </div>
 
-<br>
-
-### 📺 무드버디 실제 화면
+## 📺 무드버디 실제 화면
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
   <img src="https://github.com/user-attachments/assets/dc521e90-b4fd-4cd2-94e2-1e2d2a93dbbb" width="30%">
   <img src="https://github.com/user-attachments/assets/8db0dbf0-0c61-420b-9bb1-497f80b802dc" width="30%">
@@ -51,22 +70,43 @@
   <img src="https://github.com/user-attachments/assets/5ecc9021-4309-44a1-bf54-f585b7707b3d" width="30%">
 </div>
 
-<br>
-
-### 🎥 시연 영상
+## 🎥 시연 영상
 ![GIFMaker_me](https://github.com/user-attachments/assets/2a61f871-a1ca-402a-98a2-3643112e5b53)
-
-<br>
 
 ## 🟢 ERD
 <img src="https://github.com/user-attachments/assets/6a2597eb-ea4e-4bee-93e8-77b6b2bfbadc" width="80%">
 
-<br>
-
 ## 🛠️ 아키텍처 
 <img src="https://github.com/user-attachments/assets/7aa9fe26-97c0-4a53-af18-2d74fcc38e17" width="80%">
-
-<br>
+  
+## 📝 규칙
+  
+- **커밋 컨벤션**
+  - Feat: 새로운 기능 추가
+  - Fix: 버그 수정
+  - Docs: 문서 수정
+  - Style: 코드 포맷팅, 세미콜론 누락, 코드 변경이 없는 경우
+  - Refactor: 코드 리팩토링
+  - Test: 테스트 코드, 리팩토링 테스트 코드 추가
+  - Chore: 빌드 업무 수정, 패키지 매니저 수정
+  
+- **Branch 규칙**
+  - 각자의 깃 타입과 이슈번호를 딴 branch 명을 사용한다.
+  - 예시
+    - git checkout -b 타입/#이슈번호
+    - git checkout -b feature/#5
+  
+- **Commit message 규칙**
+  - "타입(앞글자를 대문자로): 커밋 메세지 - #이슈번호" 형식으로 작성한다.
+  - 예시
+    - Feat: 커밋 내용 - #이슈번호
+    - Feat: 로그인 구현 - #5
+  
+- **DTO 규칙**
+  - 엔티티명 + Res/Req + 역할 + DTO
+  - 예시
+    - UserResSaveDTO
+    - PostReqSaveDTO
 
 ## 🔥 TroubleShooting
 - 정목(M-ung)
@@ -90,128 +130,3 @@
   - 📍 90,000 쿼리 발생을 줄이다📉
     -  https://velog.io/@_mung/%EC%84%B1%EB%8A%A5-%EA%B0%9C%EC%84%A0-MoodBuddy-90000-%EC%BF%BC%EB%A6%AC-%EB%B0%9C%EC%83%9D%EC%9D%84-%EC%A4%84%EC%9D%B4%EB%8B%A4
 
-<br>
-<br>
-
-<details>
-  <summary> 💊 1차 개발 (⬇️ 눌러주세요‼️) </summary>
-  
-  ## 🕰️ 개발 기간
-  * 24.03.01 - 24.07.27
-  
-  <br>
-  
-  ## ⚙️ 개발 환경
-  - `Java 17`
-  - **IDE** : IntelliJ IDEA
-  - **Framework** : Springboot(3.2.6)
-  - **Database** : MySQL
-  - **ORM** : Hibernate (Spring Data JPA 사용)
-  
-  <br>
-  
-  ## 🧑‍🤝‍🧑 멤버 구성
-  <p>
-      <a href="https://github.com/M-ung">
-        <img src="https://avatars.githubusercontent.com/u/126846468?v=4" width="100">
-      </a>
-      <a href="https://github.com/dylee00">
-        <img src="https://avatars.githubusercontent.com/u/135154209?v=4" width="100">
-      </a>
-      <a href="https://github.com/zzammin">
-        <img src="https://avatars.githubusercontent.com/u/105933726?v=4" width="100"> 
-      </a>
-  </p>
-  
-  <br>
-  
-  ## 📝 규칙
-  
-  - **커밋 컨벤션**
-      - Feat: 새로운 기능 추가
-      - Fix: 버그 수정
-      - Docs: 문서 수정
-      - Style: 코드 포맷팅, 세미콜론 누락, 코드 변경이 없는 경우
-      - Refactor: 코드 리팩토링
-      - Test: 테스트 코드, 리팩토링 테스트 코드 추가
-      - Chore: 빌드 업무 수정, 패키지 매니저 수정
-  
-  - **Branch 규칙**
-      - 각자의 깃 닉네임을 딴 branch 명을 사용한다.
-      - 예시
-          - git checkout -b mung
-  
-  - **Commit message 규칙**
-      - 종류: 메시지
-      - 예시
-          - feat: 커밋 내용 - #브랜치명
-          - feat: 로그인 구현 - #mung
-  
-  - **DTO 규칙**
-      - 엔티티명 + Res/Req + 역할 + DTO
-      - 예시
-          - UserResSaveDTO
-          - PostReqSaveDTO
-
-</details>
-
-
-<details>
-  <summary> 💊 2차 개발 (⬇️ 눌러주세요‼️) </summary>
-  
-  ## 🕰️ 개발 기간
-  * 24.08.01 - 진행 중
-  
-  <br>
-  
-  ## ⚙️ 개발 환경
-  - `Java 21`
-  - **IDE** : IntelliJ IDEA
-  - **Framework** : Springboot(3.3.7)
-  - **Database** : MySQL
-  - **ORM** : Hibernate (Spring Data JPA 사용)
-  
-  <br>
-  
-  ## 🧑‍🤝‍🧑 멤버 구성
-  <p>
-      <a href="https://github.com/M-ung">
-        <img src="https://avatars.githubusercontent.com/u/126846468?v=4" width="100">
-      </a>
-      <a href="https://github.com/zzammin">
-        <img src="https://avatars.githubusercontent.com/u/105933726?v=4" width="100"> 
-      </a>
-  </p>
-  
-  <br>
-  
-  ## 📝 규칙
-  
-  - **커밋 컨벤션**
-      - Feat: 새로운 기능 추가
-      - Fix: 버그 수정
-      - Docs: 문서 수정
-      - Style: 코드 포맷팅, 세미콜론 누락, 코드 변경이 없는 경우
-      - Refactor: 코드 리팩토링
-      - Test: 테스트 코드, 리팩토링 테스트 코드 추가
-      - Chore: 빌드 업무 수정, 패키지 매니저 수정
-  
-  - **Branch 규칙**
-      - 각자의 깃 타입과 이슈번호를 딴 branch 명을 사용한다.
-      - 예시
-          - git checkout -b 타입/#이슈번호
-          - git checkout -b feature/#5
-  
-  - **Commit message 규칙**
-      - "타입(앞글자를 대문자로): 커밋 메세지 - #이슈번호" 형식으로 작성한다.
-      - 예시
-          - Feat: 커밋 내용 - #이슈번호
-          - Feat: 로그인 구현 - #5
-  
-  - **DTO 규칙**
-      - 엔티티명 + Res/Req + 역할 + DTO
-      - 예시
-          - UserResSaveDTO
-          - PostReqSaveDTO
-  
-</details>
