@@ -76,9 +76,12 @@
 ## 🟢 ERD
 <img src="https://github.com/user-attachments/assets/6a2597eb-ea4e-4bee-93e8-77b6b2bfbadc" width="80%">
 
-## 🛠️ 아키텍처 
+## 🛠️ 시스템 아키텍처 
 <img src="https://github.com/user-attachments/assets/7aa9fe26-97c0-4a53-af18-2d74fcc38e17" width="80%">
-  
+
+## 🛠️ 디자인 패턴 
+<img src="https://github.com/user-attachments/assets/ddd08149-2973-4e89-8590-8864f2e9312f" width="80%">
+
 ## 📝 규칙
   
 - **커밋 컨벤션**
