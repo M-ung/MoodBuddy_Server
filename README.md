@@ -115,8 +115,6 @@
 - 정목(M-ung)
   - 📍 Service 계층이 무겁다면, Facade 패턴 어때?
     -  https://velog.io/@_mung/TroubleShooting-MoodBuddy-Service-%EA%B3%84%EC%B8%B5%EC%9D%B4-%EB%AC%B4%EA%B2%81%EB%8B%A4%EB%A9%B4-Facade-%ED%8C%A8%ED%84%B4-%EC%96%B4%EB%95%8C
-  - 📍 사용자 피드백 🔊 : 일기 저장이 너무 느려요..😭😭
-    -  https://velog.io/@_mung/TroubleShooting-MoodBuddy-%EC%82%AC%EC%9A%A9%EC%9E%90-%ED%94%BC%EB%93%9C%EB%B0%B1-%EC%9D%BC%EA%B8%B0-%EC%A0%80%EC%9E%A5%EC%9D%B4-%EB%84%88%EB%AC%B4-%EB%8A%90%EB%A0%A4%EC%9A%94
   - 📍 동시에 여러 기기로 일기에 접근한다면..?
     - https://velog.io/@_mung/TroubleShooting-MoodBuddy-%EB%8F%99%EC%8B%9C%EC%97%90-%EB%8B%A4%EB%A5%B8-%EA%B8%B0%EA%B8%B0-2%EB%8C%80%EB%A1%9C-%EC%9D%BC%EA%B8%B0%EC%97%90-%EC%A0%91%EA%B7%BC%ED%95%9C%EB%8B%A4%EB%A9%B4
   - 📍 너의 쿼디티아이는 뭐니?!
@@ -132,4 +130,5 @@
     -  https://velog.io/@_mung/%EC%84%B1%EB%8A%A5-%ED%85%8C%EC%8A%A4%ED%8A%B8-MoodBuddy
   - 📍 90,000 쿼리 발생을 줄이다📉
     -  https://velog.io/@_mung/%EC%84%B1%EB%8A%A5-%EA%B0%9C%EC%84%A0-MoodBuddy-90000-%EC%BF%BC%EB%A6%AC-%EB%B0%9C%EC%83%9D%EC%9D%84-%EC%A4%84%EC%9D%B4%EB%8B%A4
-
+  - 📍 32명의 사용자 피드백 "일기 저장 시간이 너무 길어요!!"
+    - https://velog.io/@_mung/%EC%84%B1%EB%8A%A5-%EA%B0%9C%EC%84%A0-MoodBuddy-32%EB%AA%85%EC%9D%98-%EC%82%AC%EC%9A%A9%EC%9E%90-%ED%94%BC%EB%93%9C%EB%B0%B1-%EC%9D%BC%EA%B8%B0-%EC%A0%80%EC%9E%A5-%EC%8B%9C%EA%B0%84%EC%9D%B4-%EB%84%88%EB%AC%B4-%EA%B8%B8%EC%96%B4%EC%9A%94 
