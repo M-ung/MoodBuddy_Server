@@ -37,9 +37,9 @@ public class DiaryRepositoryImpl implements DiaryRepositoryCustom {
                 .leftJoin(diaryImage)
                 .on(diary.id.eq(diaryImage.diaryId)
                         .and(diaryImage.moodBuddyStatus.eq(MoodBuddyStatus.ACTIVE)))
-                .where(diary.id.eq(diaryId)
-                        .and(diary.moodBuddyStatus.eq(MoodBuddyStatus.ACTIVE))
-                        .and(diary.userId.eq(userId)))
+                .where(diary.id.eq(diaryId),
+                        diary.moodBuddyStatus.eq(MoodBuddyStatus.ACTIVE)
+                        ,diary.userId.eq(userId))
                 .fetch();
 
         if (result.isEmpty()) {

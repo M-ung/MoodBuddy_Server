@@ -1,7 +1,6 @@
 package moodbuddy.moodbuddy.domain.bookMark.service;
 
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import moodbuddy.moodbuddy.domain.bookMark.domain.BookMark;
 import moodbuddy.moodbuddy.domain.bookMark.repository.BookMarkRepository;
 import moodbuddy.moodbuddy.domain.diary.domain.Diary;
@@ -14,7 +13,6 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
-@Slf4j
 public class BookMarkServiceImpl implements BookMarkService {
     private final BookMarkRepository bookMarkRepository;
 

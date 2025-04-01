@@ -16,15 +16,12 @@ import org.springframework.batch.item.database.builder.JdbcCursorItemReaderBuild
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.PlatformTransactionManager;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
 import javax.sql.DataSource;
 import java.time.LocalDate;
 
 @Configuration
 @RequiredArgsConstructor
-@EnableTransactionManagement
 public class QuddyTICreateBatchConfig {
-
     private final JobRepository jobRepository;
     private final DataSource dataSource;
     private final QuddyTIBatchJDBCRepository quddyTIBatchJDBCRepository;

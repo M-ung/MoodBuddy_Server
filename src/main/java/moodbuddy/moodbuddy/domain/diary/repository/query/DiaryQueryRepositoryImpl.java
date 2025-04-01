@@ -36,8 +36,10 @@ public class DiaryQueryRepositoryImpl implements DiaryQueryRepositoryCustom {
                         diary.thumbnail
                 ))
                 .from(diary)
-                .where(diary.userId.eq(userId)
-                        .and(diary.moodBuddyStatus.eq(MoodBuddyStatus.ACTIVE)))
+                .where(
+                        diary.userId.eq(userId),
+                        diary.moodBuddyStatus.eq(MoodBuddyStatus.ACTIVE)
+                )
                 .orderBy(isAscending ? diary.date.asc() : diary.date.desc())
                 .offset(pageable.getOffset())
                 .limit(pageable.getPageSize())
@@ -71,9 +73,11 @@ public class DiaryQueryRepositoryImpl implements DiaryQueryRepositoryCustom {
                         diary.thumbnail
                 ))
                 .from(diary)
-                .where(diary.userId.eq(userId)
-                        .and(diary.emotion.eq(emotion))
-                        .and(diary.moodBuddyStatus.eq(MoodBuddyStatus.ACTIVE)))
+                .where(
+                        diary.userId.eq(userId),
+                        diary.emotion.eq(emotion),
+                        diary.moodBuddyStatus.eq(MoodBuddyStatus.ACTIVE)
+                )
                 .orderBy(isAscending ? diary.date.asc() : diary.date.desc())
                 .offset(pageable.getOffset())
                 .limit(pageable.getPageSize())

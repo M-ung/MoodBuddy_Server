@@ -15,7 +15,7 @@ import moodbuddy.moodbuddy.domain.user.dto.response.UserResLoginDTO;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/v2/user")
+@RequestMapping("/api/v2/member")
 public class OAuthController {
 
     private final KakaoService kakaoService;

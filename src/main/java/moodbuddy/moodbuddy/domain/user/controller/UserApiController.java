@@ -18,7 +18,6 @@ import java.time.LocalDate;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v2/member")
-@Slf4j
 public class UserApiController {
     private final UserService userService;
 

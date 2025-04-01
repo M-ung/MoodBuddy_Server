@@ -26,25 +26,24 @@ public class RedisCacheConfig {
                 .allowIfSubType(Object.class)
                 .build();
         return new ObjectMapper()
-                .enable(SerializationFeature.INDENT_OUTPUT)
-                .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS)
-                .registerModule(new JavaTimeModule())
-                .activateDefaultTyping(typeValidator, ObjectMapper.DefaultTyping.NON_FINAL);
+                .enable(SerializationFeature.INDENT_OUTPUT) // Json 들여쓰기 출력
+                .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS) // 날짜를 문자열로 저장
+                .registerModule(new JavaTimeModule()) // Java 8 날짜 타입
+                .activateDefaultTyping(typeValidator, ObjectMapper.DefaultTyping.NON_FINAL); // 다양한 타입의 객체를 안전하게 Json으로 저장
     }
 
     private RedisCacheConfiguration defaultCacheConfiguration() {
         return RedisCacheConfiguration
                 .defaultCacheConfig()
-                .disableCachingNullValues()
-                .serializeKeysWith(fromSerializer(new StringRedisSerializer()))
-                .serializeValuesWith(fromSerializer(new GenericJackson2JsonRedisSerializer(objectMapper())));
+                .disableCachingNullValues() // Null은 캐시 X
+                .serializeKeysWith(fromSerializer(new StringRedisSerializer())) // Key는 문자열로 저장
+                .serializeValuesWith(fromSerializer(new GenericJackson2JsonRedisSerializer(objectMapper()))); // 값은 Json으로 저장
     }
 
     @Bean
     public RedisCacheManager cacheManager(RedisConnectionFactory cf) {
         Map<String, RedisCacheConfiguration> cacheConfigurations = new HashMap<>();
-        int randomTTL = 24 + (int) (Math.random() * 5);
-        cacheConfigurations.put("diaries", defaultCacheConfiguration().entryTtl(Duration.ofHours(randomTTL)));
+        cacheConfigurations.put("diaries", defaultCacheConfiguration().entryTtl(Duration.ofHours(24 + (int) (Math.random() * 5))));
         return RedisCacheManager.builder(cf)
                 .cacheDefaults(defaultCacheConfiguration())
                 .withInitialCacheConfigurations(cacheConfigurations)

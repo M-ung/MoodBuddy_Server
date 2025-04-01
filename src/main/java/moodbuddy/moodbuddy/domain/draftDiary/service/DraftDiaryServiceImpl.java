@@ -1,6 +1,5 @@
 package moodbuddy.moodbuddy.domain.draftDiary.service;
 
-import jakarta.persistence.OptimisticLockException;
 import lombok.RequiredArgsConstructor;
 import moodbuddy.moodbuddy.domain.diary.domain.Diary;
 import moodbuddy.moodbuddy.domain.diary.repository.DiaryRepository;
@@ -20,9 +19,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import java.time.LocalDate;
 import java.util.List;
-
 import static moodbuddy.moodbuddy.global.error.ErrorCode.DRAFT_DIARY_NOT_FOUND;
-import static moodbuddy.moodbuddy.global.error.ErrorCode.DRAFT_DIARY_NO_ACCESS;
 
 @Service
 @Transactional(readOnly = true)

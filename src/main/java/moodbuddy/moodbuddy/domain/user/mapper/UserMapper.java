@@ -12,7 +12,6 @@ public class UserMapper {
         return UserResLoginDTO.builder()
                 .userId(userId)
                 .accessToken(JwtUtil.createAccessToken(userId))
-                .refreshToken(JwtUtil.createRefreshToken(userId))
                 .build();
     }
 }

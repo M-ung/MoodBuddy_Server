@@ -47,11 +47,12 @@ public class DraftDiaryRepositoryImpl implements DraftDiaryRepositoryCustom {
                         draftDiaryImage.imageUrl
                 )
                 .from(draftDiary)
+                .leftJoin(draftDiaryImage)
                 .on(draftDiary.id.eq(draftDiaryImage.draftDiaryId)
                         .and(draftDiaryImage.moodBuddyStatus.eq(MoodBuddyStatus.ACTIVE)))
-                .where(draftDiary.id.eq(draftDiaryId)
-                        .and(draftDiary.userId.eq(userId))
-                        .and(draftDiary.moodBuddyStatus.eq(MoodBuddyStatus.ACTIVE)))
+                .where(draftDiary.id.eq(draftDiaryId),
+                        draftDiary.userId.eq(userId),
+                        draftDiary.moodBuddyStatus.eq(MoodBuddyStatus.ACTIVE))
                 .fetch();
 
         if (result.isEmpty()) {

@@ -14,6 +14,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
@@ -98,8 +99,8 @@ public class QuddyTIBatchJDBCRepository {
             INSERT INTO quddy_ti (
                 user_id, quddy_ti_year, quddy_ti_month, diary_frequency, daily_count, growth_count,
                 emotion_count, travel_count, happiness_count, anger_count, disgust_count, fear_count,
-                neutral_count, sadness_count, surprise_count, quddy_ti_type, mood_buddy_status
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                neutral_count, sadness_count, surprise_count, quddy_ti_type, mood_buddy_status, created_time, updated_time
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """;
 
         jdbcTemplate.batchUpdate(sql, new BatchPreparedStatementSetter() {
@@ -123,6 +124,8 @@ public class QuddyTIBatchJDBCRepository {
                 ps.setInt(15, quddyTI.getSurpriseCount());
                 ps.setString(16, quddyTI.getQuddyTIType());
                 ps.setString(17, quddyTI.getMoodBuddyStatus().toString());
+                ps.setString(18, LocalDateTime.now().toString());
+                ps.setString(19, LocalDateTime.now().toString());
             }
 
             @Override

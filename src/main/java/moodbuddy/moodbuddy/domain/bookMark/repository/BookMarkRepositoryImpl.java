@@ -7,13 +7,12 @@ import moodbuddy.moodbuddy.domain.diary.dto.response.query.DiaryResQueryDTO;
 import moodbuddy.moodbuddy.global.common.base.type.MoodBuddyStatus;
 import moodbuddy.moodbuddy.global.common.base.PageCustom;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.redis.core.RedisTemplate;
 import java.util.Optional;
 import static moodbuddy.moodbuddy.domain.diary.domain.QDiary.diary;
 
 public class BookMarkRepositoryImpl implements BookMarkRepositoryCustom {
     private final JPAQueryFactory queryFactory;
-    public BookMarkRepositoryImpl(EntityManager em, RedisTemplate<String, Object> redisTemplate) {
+    public BookMarkRepositoryImpl(EntityManager em) {
         this.queryFactory = new JPAQueryFactory(em);
     }
 
@@ -27,9 +26,11 @@ public class BookMarkRepositoryImpl implements BookMarkRepositoryCustom {
                         diary.thumbnail
                 ))
                 .from(diary)
-                .where(diary.userId.eq(userId)
-                        .and(diary.bookMark.eq(true))
-                        .and(diary.moodBuddyStatus.eq(MoodBuddyStatus.ACTIVE)))
+                .where(
+                        diary.userId.eq(userId),
+                        diary.bookMark.eq(true),
+                        diary.moodBuddyStatus.eq(MoodBuddyStatus.ACTIVE)
+                )
                 .offset(pageable.getOffset())
                 .limit(pageable.getPageSize())
                 .fetch();
@@ -44,9 +45,11 @@ public class BookMarkRepositoryImpl implements BookMarkRepositoryCustom {
         return Optional.ofNullable(
                 queryFactory.select(diary.count())
                         .from(diary)
-                        .where(diary.userId.eq(userId)
-                                .and(diary.bookMark.eq(true))
-                                .and(diary.moodBuddyStatus.eq(MoodBuddyStatus.ACTIVE)))
+                        .where(
+                                diary.userId.eq(userId),
+                                diary.bookMark.eq(true),
+                                diary.moodBuddyStatus.eq(MoodBuddyStatus.ACTIVE)
+                        )
                         .fetchOne()
         ).orElse(0L);
     }

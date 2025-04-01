@@ -10,7 +10,6 @@ import moodbuddy.moodbuddy.global.common.base.BaseTimeEntity;
 import moodbuddy.moodbuddy.global.common.base.type.MoodBuddyStatus;
 import moodbuddy.moodbuddy.global.error.ErrorCode;
 import java.util.Map;
-import java.util.Optional;
 
 @Entity
 @Setter
@@ -93,51 +92,40 @@ public class QuddyTI extends BaseTimeEntity {
     }
 
     public void update(Map<DiaryEmotion, Long> emotionCounts, Map<DiarySubject, Long> subjectCounts) {
-        this.happinessCount = emotionCounts.getOrDefault(DiaryEmotion.HAPPINESS, 0L).intValue();
-        this.angerCount = emotionCounts.getOrDefault(DiaryEmotion.ANGER, 0L).intValue();
-        this.disgustCount = emotionCounts.getOrDefault(DiaryEmotion.DISGUST, 0L).intValue();
-        this.fearCount = emotionCounts.getOrDefault(DiaryEmotion.FEAR, 0L).intValue();
-        this.neutralCount = emotionCounts.getOrDefault(DiaryEmotion.NEUTRAL, 0L).intValue();
-        this.sadnessCount = emotionCounts.getOrDefault(DiaryEmotion.SADNESS, 0L).intValue();
-        this.surpriseCount = emotionCounts.getOrDefault(DiaryEmotion.SURPRISE, 0L).intValue();
-        this.dailyCount = subjectCounts.getOrDefault(DiarySubject.DAILY, 0L).intValue();
-        this.growthCount = subjectCounts.getOrDefault(DiarySubject.GROWTH, 0L).intValue();
-        this.emotionCount = subjectCounts.getOrDefault(DiarySubject.EMOTION, 0L).intValue();
-        this.travelCount = subjectCounts.getOrDefault(DiarySubject.TRAVEL, 0L).intValue();
+        this.happinessCount = getCount(emotionCounts, DiaryEmotion.HAPPINESS);
+        this.angerCount = getCount(emotionCounts, DiaryEmotion.ANGER);
+        this.disgustCount = getCount(emotionCounts, DiaryEmotion.DISGUST);
+        this.fearCount = getCount(emotionCounts, DiaryEmotion.FEAR);
+        this.neutralCount = getCount(emotionCounts, DiaryEmotion.NEUTRAL);
+        this.sadnessCount = getCount(emotionCounts, DiaryEmotion.SADNESS);
+        this.surpriseCount = getCount(emotionCounts, DiaryEmotion.SURPRISE);
+        this.dailyCount = getCount(subjectCounts, DiarySubject.DAILY);
+        this.growthCount = getCount(subjectCounts, DiarySubject.GROWTH);
+        this.emotionCount = getCount(subjectCounts, DiarySubject.EMOTION);
+        this.travelCount = getCount(subjectCounts, DiarySubject.TRAVEL);
+        this.diaryFrequency = emotionCounts.values().stream().mapToInt(Long::intValue).sum();
         this.quddyTIType = generateType(emotionCounts, subjectCounts);
         this.moodBuddyStatus = MoodBuddyStatus.ACTIVE;
-        this.diaryFrequency = (int) emotionCounts.values().stream().mapToLong(Long::longValue).sum();
     }
 
-    private String generateType(Map<DiaryEmotion, Long> emotionCounts, Map<DiarySubject, Long> subjectCounts) {
-        String diaryType = getDiaryFrequent(emotionCounts);
-        if (QuddyTIType.NO_DIARY.getValue().equals(diaryType)) {
-            return QuddyTIType.NO_DIARY.getValue();
-        }
-        String mostFrequentSubject = getMostFrequentEntry(subjectCounts)
-                .map(subject -> subject.name().substring(0, 1))
-                .orElseThrow(() -> new QuddyTIInvalidateException(ErrorCode.QUDDYTI_INVALIDATE));
-        String mostFrequentEmotion = getMostFrequentEntry(emotionCounts)
-                .map(this::getEmotionAbbreviation)
-                .orElseThrow(() -> new QuddyTIInvalidateException(ErrorCode.QUDDYTI_INVALIDATE));
-
-        return diaryType + mostFrequentSubject + mostFrequentEmotion;
+    private <T> int getCount(Map<T, Long> map, T key) {
+        return map.getOrDefault(key, 0L).intValue();
     }
 
-    private String getDiaryFrequent(Map<DiaryEmotion, Long> emotionCounts) {
-        long totalDiaryCount = emotionCounts.values().stream().mapToLong(Long::longValue).sum();
-        return totalDiaryCount == 0 ? QuddyTIType.NO_DIARY.getValue() : (totalDiaryCount >= 15 ? QuddyTIType.TYPE_J.getValue() : QuddyTIType.TYPE_P.getValue());
-    }
+    private String generateType(Map<DiaryEmotion, Long> emotions, Map<DiarySubject, Long> subjects) {
+        int total = emotions.values().stream().mapToInt(Long::intValue).sum();
+        if (total == 0) return QuddyTIType.NO_DIARY.getValue();
 
-    private <T> Optional<T> getMostFrequentEntry(Map<T, Long> counts) {
-        return counts.entrySet().stream()
+        String type = total >= 15 ? QuddyTIType.TYPE_J.getValue() : QuddyTIType.TYPE_P.getValue();
+        String subject = subjects.entrySet().stream()
                 .max(Map.Entry.comparingByValue())
-                .map(Map.Entry::getKey);
-    }
+                .orElseThrow(() -> new QuddyTIInvalidateException(ErrorCode.QUDDYTI_INVALIDATE))
+                .getKey().name().substring(0, 1);
+        String emotion = emotions.entrySet().stream()
+                .max(Map.Entry.comparingByValue())
+                .orElseThrow(() -> new QuddyTIInvalidateException(ErrorCode.QUDDYTI_INVALIDATE))
+                .getKey().name().substring(0, 1);
 
-    private String getEmotionAbbreviation(DiaryEmotion emotion) {
-        return Optional.ofNullable(emotion)
-                .map(DiaryEmotion::getAbbreviation)
-                .orElse(QuddyTIType.NO_DIARY.getValue());
+        return type + subject + emotion;
     }
 }

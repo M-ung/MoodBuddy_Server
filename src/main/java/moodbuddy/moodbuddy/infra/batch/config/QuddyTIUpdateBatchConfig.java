@@ -20,7 +20,6 @@ import org.springframework.batch.item.database.builder.JdbcCursorItemReaderBuild
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.PlatformTransactionManager;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
 import javax.sql.DataSource;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -29,7 +28,6 @@ import java.util.Map;
 
 @Configuration
 @RequiredArgsConstructor
-@EnableTransactionManagement
 public class QuddyTIUpdateBatchConfig {
     private final DataSource dataSource;
     private final JobRepository jobRepository;
