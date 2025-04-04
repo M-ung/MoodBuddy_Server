@@ -86,12 +86,11 @@
 <img src="https://github.com/user-attachments/assets/b083233f-0dc4-41dc-9121-ca1ea487d466" width="80%">
 
 ## ✨ 성능 개선
-### 90,000건의 쿼리 단축 [🔗 벨로그 링크](https://velog.io/@_mung/%EC%84%B1%EB%8A%A5-%EA%B0%9C%EC%84%A0-MoodBuddy-90000-%EC%BF%BC%EB%A6%AC-%EB%B0%9C%EC%83%9D%EC%9D%84-%EC%A4%84%EC%9D%B4%EB%8B%A4)
-<img src="https://github.com/user-attachments/assets/7ca8d206-558d-4347-b142-cbab39062fdd" width="80%">
-
 ### 일기 조회 시간 약 95.9% 단축 [🔗 벨로그 링크](https://velog.io/@_mung/%EC%84%B1%EB%8A%A5-%ED%85%8C%EC%8A%A4%ED%8A%B8-MoodBuddy)
 <img src="https://github.com/user-attachments/assets/4ed74165-bea1-4520-9c37-53f903b32a5e" width="80%">
 
-### 93.9% 일기 저장 시간 단축 [🔗 벨로그 링크](https://velog.io/@_mung/%EC%84%B1%EB%8A%A5-%ED%85%8C%EC%8A%A4%ED%8A%B8-MoodBuddy)
-<img src="https://github.com/user-attachments/assets/d26b837b-a511-44c2-a945-09afc26fb759" width="80%">
+### 90,000건의 쿼리 단축 [🔗 벨로그 링크](https://velog.io/@_mung/%EC%84%B1%EB%8A%A5-%EA%B0%9C%EC%84%A0-MoodBuddy-90000-%EC%BF%BC%EB%A6%AC-%EB%B0%9C%EC%83%9D%EC%9D%84-%EC%A4%84%EC%9D%B4%EB%8B%A4)
+<img src="https://github.com/user-attachments/assets/7ca8d206-558d-4347-b142-cbab39062fdd" width="80%">
 
+### 93.9% 일기 저장 시간 단축 [🔗 벨로그 링크](https://velog.io/@_mung/%EC%84%B1%EB%8A%A5-%EA%B0%9C%EC%84%A0-MoodBuddy-32%EB%AA%85%EC%9D%98-%EC%82%AC%EC%9A%A9%EC%9E%90-%ED%94%BC%EB%93%9C%EB%B0%B1-%EC%9D%BC%EA%B8%B0-%EC%A0%80%EC%9E%A5-%EC%8B%9C%EA%B0%84%EC%9D%B4-%EB%84%88%EB%AC%B4-%EA%B8%B8%EC%96%B4%EC%9A%94)
+<img src="https://github.com/user-attachments/assets/d26b837b-a511-44c2-a945-09afc26fb759" width="80%">
