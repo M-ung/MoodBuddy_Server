@@ -30,7 +30,7 @@ public class DraftDiaryServiceImpl implements DraftDiaryService {
 
     @Override
     @Transactional
-    public Long saveDraftDiary(final Long userId, DraftDiaryReqSaveDTO requestDTO) {
+    public Long save(final Long userId, DraftDiaryReqSaveDTO requestDTO) {
         return draftDiaryRepository.save((DraftDiary.of(
                 requestDTO,
                 userId))).getId();
@@ -38,11 +38,11 @@ public class DraftDiaryServiceImpl implements DraftDiaryService {
 
     @Override
     @Transactional
-    public Long publishDraftDiary(final Long userId, DraftDiaryReqPublishDTO requestDTO) {
+    public Long publish(final Long userId, DraftDiaryReqPublishDTO requestDTO) {
         try {
             var findDraftDiary = findDraftDiaryById(userId, requestDTO.diaryId());
             findDraftDiary.validateDraftDiaryAccess(userId);
-            deleteDraftDiariesByDate(userId, findDraftDiary.getDate());
+            deleteByDate(userId, findDraftDiary.getDate());
             return diaryRepository.save(Diary.publish(userId, requestDTO)).getId();
         } catch (ObjectOptimisticLockingFailureException ex) {
             throw new DraftDiaryConcurrentUpdateException(ErrorCode.DRAFT_DIARY_CONCURRENT_UPDATE);
@@ -56,7 +56,7 @@ public class DraftDiaryServiceImpl implements DraftDiaryService {
 
     @Override
     @Transactional
-    public void deleteDraftDiaries(final Long userId, DraftDiaryReqSelectDeleteDTO requestDTO) {
+    public void delete(final Long userId, DraftDiaryReqSelectDeleteDTO requestDTO) {
         try {
             requestDTO.diaryIdList().forEach(draftDiaryId ->
                     findDraftDiaryById(userId, draftDiaryId).updateMoodBuddyStatus(MoodBuddyStatus.DIS_ACTIVE));
@@ -71,7 +71,7 @@ public class DraftDiaryServiceImpl implements DraftDiaryService {
     }
 
     @Override
-    public void deleteDraftDiariesByDate(final Long userId, LocalDate draftDiaryDate) {
+    public void deleteByDate(final Long userId, LocalDate draftDiaryDate) {
         draftDiaryRepository.findAllByUserIdAndDate(userId, draftDiaryDate)
                 .forEach(draftDiary -> draftDiary.updateMoodBuddyStatus(MoodBuddyStatus.DIS_ACTIVE));
     }

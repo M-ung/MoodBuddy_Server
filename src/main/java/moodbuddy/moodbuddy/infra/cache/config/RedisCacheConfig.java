@@ -1,4 +1,4 @@
-package moodbuddy.moodbuddy.infra.redis.config;
+package moodbuddy.moodbuddy.infra.cache.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;

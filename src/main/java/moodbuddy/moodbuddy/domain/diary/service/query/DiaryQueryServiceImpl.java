@@ -1,15 +1,19 @@
 package moodbuddy.moodbuddy.domain.diary.service.query;
 
 import lombok.RequiredArgsConstructor;
+import moodbuddy.moodbuddy.domain.diary.domain.Diary;
+import moodbuddy.moodbuddy.domain.diary.domain.DiaryQuery;
 import moodbuddy.moodbuddy.domain.diary.domain.type.DiaryEmotion;
 import moodbuddy.moodbuddy.domain.diary.dto.request.query.DiaryReqFilterDTO;
 import moodbuddy.moodbuddy.domain.diary.dto.response.query.DiaryResQueryDTO;
+import moodbuddy.moodbuddy.domain.diary.exception.query.DiaryQueryNotFoundException;
 import moodbuddy.moodbuddy.domain.diary.repository.query.DiaryQueryRepository;
 import moodbuddy.moodbuddy.global.common.base.PageCustom;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import static moodbuddy.moodbuddy.global.error.ErrorCode.DIARY_NOT_FOUND;
 
 @Service
 @Transactional(readOnly = true)
@@ -38,12 +42,25 @@ public class DiaryQueryServiceImpl implements DiaryQueryService {
     }
 
     @Override
-    @Cacheable(
-            cacheNames = "diaries",
-            key = "'userId:' + #userId + '_sort:' + #isAscending + '_page:' + #pageable.pageNumber + '_size:' + #pageable.pageSize",
-            unless = "#result == null"
-    )
-    public PageCustom<DiaryResQueryDTO> refreshDiariesCache(final Long userId, boolean isAscending, Pageable pageable) {
-        return diaryQueryRepository.findDiariesWithPageable(userId, false, pageable);
+    @Transactional
+    public void save(final Diary diary) {
+        diaryQueryRepository.save(DiaryQuery.from(diary));
+    }
+
+    @Override
+    @Transactional
+    public void update(final Diary diary) {
+        findDiaryQueryById(diary.getId()).update(diary);
+    }
+
+    @Override
+    @Transactional
+    public void delete(final Long diaryId) {
+        diaryQueryRepository.deleteById(diaryId);
+    }
+
+    private DiaryQuery findDiaryQueryById(final Long diaryId) {
+        return diaryQueryRepository.findById(diaryId)
+                .orElseThrow(() -> new DiaryQueryNotFoundException(DIARY_NOT_FOUND));
     }
 }

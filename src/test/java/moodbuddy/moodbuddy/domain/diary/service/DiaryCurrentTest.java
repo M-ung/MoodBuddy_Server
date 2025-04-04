@@ -64,7 +64,7 @@ public class DiaryCurrentTest {
         for (int i = 0; i < THREAD_COUNT; i++) {
             executorService.submit(() -> {
                 try {
-                    diaryService.saveDiary(1L, saveRequestDTO);
+                    diaryService.save(1L, saveRequestDTO);
                     successCount.incrementAndGet();
                 } catch (Exception e) {
                     failureCount.incrementAndGet();
@@ -90,7 +90,7 @@ public class DiaryCurrentTest {
         for (int i = 0; i < THREAD_COUNT; i++) {
             executorService.submit(() -> {
                 try {
-                    diaryService.updateDiary(1L, updateRequestDTO);
+                    diaryService.update(1L, updateRequestDTO);
                     successCount.incrementAndGet();
                 } catch (Exception e) {
                     failureCount.incrementAndGet();
@@ -119,7 +119,7 @@ public class DiaryCurrentTest {
         for (int i = 0; i < THREAD_COUNT; i++) {
             executorService.submit(() -> {
                 try {
-                    diaryService.deleteDiary(1L, diaryId);
+                    diaryService.delete(1L, diaryId);
                     successCount.incrementAndGet();
                 } catch (Exception e) {
                     failureCount.incrementAndGet();

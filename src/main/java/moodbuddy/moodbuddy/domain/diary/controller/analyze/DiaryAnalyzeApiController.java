@@ -18,7 +18,7 @@ public class DiaryAnalyzeApiController {
 
     @PostMapping("/analyze/{diaryId}")
     @Operation(summary = "일기 분석 (요약, 주제, 감정)", description = "작성된 일기를 분석합니다. 일기 저장, 일기 수정, 임시저장 일기 -> 일기 저장 할 때 호출하면 됩니다.")
-    public ResponseEntity<DiaryResAnalyzeDTO> analyzeDiary(@Parameter(description = "일기 고유 식별자")
+    public ResponseEntity<DiaryResAnalyzeDTO> analyze(@Parameter(description = "일기 고유 식별자")
                                                            @PathVariable("diaryId") Long diaryId) {
         return ResponseEntity.ok().body(diaryAnalyzeFacade.analyze(diaryId));
     }

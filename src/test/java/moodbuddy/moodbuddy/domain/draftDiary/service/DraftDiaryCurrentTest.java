@@ -66,7 +66,7 @@ public class DraftDiaryCurrentTest {
         for (int i = 0; i < THREAD_COUNT; i++) {
             executorService.submit(() -> {
                 try {
-                    draftDiaryService.publishDraftDiary(1L, requestDTO);
+                    draftDiaryService.publish(1L, requestDTO);
                     successCount.incrementAndGet();
                 } catch (Exception e) {
                     failureCount.incrementAndGet();
@@ -98,7 +98,7 @@ public class DraftDiaryCurrentTest {
         for (int i = 0; i < THREAD_COUNT; i++) {
             executorService.submit(() -> {
                 try {
-                    draftDiaryService.deleteDraftDiaries(1L, selectDeleteDTO);
+                    draftDiaryService.delete(1L, selectDeleteDTO);
                     successCount.incrementAndGet();
                 } catch (Exception e) {
                     failureCount.incrementAndGet();

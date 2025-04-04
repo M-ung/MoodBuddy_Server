@@ -1,4 +1,4 @@
-package moodbuddy.moodbuddy.infra.redis.config;
+package moodbuddy.moodbuddy.infra.cache.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -9,10 +9,10 @@ import java.time.LocalDate;
 import java.util.List;
 
 public interface DraftDiaryService {
-    Long saveDraftDiary(final Long userId, DraftDiaryReqSaveDTO diaryReqSaveDTO);
-    Long publishDraftDiary(final Long userId, DraftDiaryReqPublishDTO requestDTO);
+    Long save(final Long userId, DraftDiaryReqSaveDTO diaryReqSaveDTO);
+    Long publish(final Long userId, DraftDiaryReqPublishDTO requestDTO);
     List<DraftDiaryResFindOneDTO> getDraftDiaries(final Long userId);
-    void deleteDraftDiaries(final Long userId, DraftDiaryReqSelectDeleteDTO requestDTO);
+    void delete(final Long userId, DraftDiaryReqSelectDeleteDTO requestDTO);
     DraftDiaryResDetailDTO getDraftDiary(final Long userId,  final Long diaryId);
-    void deleteDraftDiariesByDate(final Long userId, LocalDate draftDiaryDate);
+    void deleteByDate(final Long userId, LocalDate draftDiaryDate);
 }

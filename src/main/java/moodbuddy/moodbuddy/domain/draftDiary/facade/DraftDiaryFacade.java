@@ -11,9 +11,9 @@ import moodbuddy.moodbuddy.domain.draftDiary.dto.response.DraftDiaryResSaveDTO;
 import java.util.List;
 
 public interface DraftDiaryFacade {
-    DraftDiaryResSaveDTO saveDraftDiary(DraftDiaryReqSaveDTO requestDTO);
-    DiaryResSaveDTO publishDraftDiary(DraftDiaryReqPublishDTO requestDTO);
+    DraftDiaryResSaveDTO save(DraftDiaryReqSaveDTO requestDTO);
+    DiaryResSaveDTO publish(DraftDiaryReqPublishDTO requestDTO);
     List<DraftDiaryResFindOneDTO> getDraftDiaries();
-    void deleteDraftDiaries(DraftDiaryReqSelectDeleteDTO requestDTO);
+    void delete(DraftDiaryReqSelectDeleteDTO requestDTO);
     DraftDiaryResDetailDTO getDraftDiary(final Long diaryId);
 }

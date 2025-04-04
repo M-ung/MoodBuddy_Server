@@ -12,7 +12,7 @@ import moodbuddy.moodbuddy.global.common.base.type.MoodBuddyStatus;
 import moodbuddy.moodbuddy.global.error.ErrorCode;
 import moodbuddy.moodbuddy.domain.diary.exception.DiaryConcurrentUpdateException;
 import moodbuddy.moodbuddy.domain.diary.exception.DiaryNotFoundException;
-import moodbuddy.moodbuddy.domain.diary.exception.DiaryTodayExistingException;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.orm.ObjectOptimisticLockingFailureException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -27,19 +27,21 @@ public class DiaryServiceImpl implements DiaryService {
 
     @Override
     @Transactional
-    public Long saveDiary(final Long userId, DiaryReqSaveDTO requestDTO) {
+    @CacheEvict(cacheNames = "diaries", allEntries = true)
+    public Diary save(final Long userId, DiaryReqSaveDTO requestDTO) {
         return diaryRepository.save(Diary.of(
                 requestDTO,
-                userId)).getId();
+                userId));
     }
 
     @Override
     @Transactional
-    public Long updateDiary(final Long userId,  DiaryReqUpdateDTO requestDTO) {
+    @CacheEvict(cacheNames = "diaries", allEntries = true)
+    public Diary update(final Long userId, DiaryReqUpdateDTO requestDTO) {
         try {
             var findDiary = findDiaryById(userId, requestDTO.diaryId());
             findDiary.updateDiary(requestDTO);
-            return findDiary.getId();
+            return findDiary;
         } catch (ObjectOptimisticLockingFailureException ex) {
             throw new DiaryConcurrentUpdateException(ErrorCode.DIARY_CONCURRENT_UPDATE);
         }
@@ -47,7 +49,8 @@ public class DiaryServiceImpl implements DiaryService {
 
     @Override
     @Transactional
-    public LocalDate deleteDiary(final Long userId,  final Long diaryId) {
+    @CacheEvict(cacheNames = "diaries", allEntries = true)
+    public LocalDate delete(final Long userId, final Long diaryId) {
         try {
             final var findDiary = findDiaryById(userId, diaryId);
             findDiary.updateMoodBuddyStatus(MoodBuddyStatus.DIS_ACTIVE);
@@ -60,13 +63,6 @@ public class DiaryServiceImpl implements DiaryService {
     @Override
     public DiaryResDetailDTO getDiary(final Long userId, final Long diaryId) {
         return diaryRepository.getDiaryById(userId, diaryId);
-    }
-
-    @Override
-    public void validateExistingDiary(final Long userId,  LocalDate diaryDate) {
-        if (diaryRepository.existsByUserIdAndDate(userId, diaryDate)) {
-            throw new DiaryTodayExistingException(ErrorCode.DIARY_TODAY_EXISTING);
-        }
     }
 
     @Override

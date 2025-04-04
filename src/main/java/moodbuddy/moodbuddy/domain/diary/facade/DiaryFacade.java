@@ -6,8 +6,8 @@ import moodbuddy.moodbuddy.domain.diary.dto.response.DiaryResDetailDTO;
 import moodbuddy.moodbuddy.domain.diary.dto.response.save.DiaryResSaveDTO;
 
 public interface DiaryFacade {
-    DiaryResSaveDTO saveDiary(DiaryReqSaveDTO requestDTO);
-    DiaryResSaveDTO updateDiary(DiaryReqUpdateDTO requestDTO);
-    void deleteDiary(final Long diaryId);
+    DiaryResSaveDTO save(DiaryReqSaveDTO requestDTO);
+    DiaryResSaveDTO update(DiaryReqUpdateDTO requestDTO);
+    void delete(final Long diaryId);
     DiaryResDetailDTO getDiary(final Long diaryId);
 }
