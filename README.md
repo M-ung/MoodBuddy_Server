@@ -26,7 +26,6 @@
     </a>
 </p>
   
-
 ## 👤 쿼디를 소개합니다 ‼️
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
   <img src="https://github.com/user-attachments/assets/2eba0acb-59a1-4c9c-af8b-1b1cc720e896" width="30%">
@@ -76,59 +75,20 @@
 ## 🟢 ERD
 <img src="https://github.com/user-attachments/assets/b81401d1-d2aa-4e2c-9f1e-eeb0980a4192" width="80%">
 
-## 🛠️ 시스템 아키텍처 
+## 🛠️ 시스템 아키텍처
 <img src="https://github.com/user-attachments/assets/7aa9fe26-97c0-4a53-af18-2d74fcc38e17" width="80%">
 
-## 🛠️ 디자인 패턴 
-<img src="https://github.com/user-attachments/assets/ddd08149-2973-4e89-8590-8864f2e9312f" width="80%">
-
-## 📝 규칙
-  
-- **커밋 컨벤션**
-  - Feat: 새로운 기능 추가
-  - Fix: 버그 수정
-  - Docs: 문서 수정
-  - Style: 코드 포맷팅, 세미콜론 누락, 코드 변경이 없는 경우
-  - Refactor: 코드 리팩토링
-  - Test: 테스트 코드, 리팩토링 테스트 코드 추가
-  - Chore: 빌드 업무 수정, 패키지 매니저 수정
-  
-- **Branch 규칙**
-  - 각자의 깃 타입과 이슈번호를 딴 branch 명을 사용한다.
-  - 예시
-    - git checkout -b 타입/#이슈번호
-    - git checkout -b feature/#5
-  
-- **Commit message 규칙**
-  - "타입(앞글자를 대문자로): 커밋 메세지 - #이슈번호" 형식으로 작성한다.
-  - 예시
-    - Feat: 커밋 내용 - #이슈번호
-    - Feat: 로그인 구현 - #5
-  
-- **DTO 규칙**
-  - 엔티티명 + Res/Req + 역할 + DTO
-  - 예시
-    - UserResSaveDTO
-    - PostReqSaveDTO
-
 ## 🔥 TroubleShooting
-- 정목(M-ung)
-  - 📍 Service 계층이 무겁다면, Facade 패턴 어때?
-    -  https://velog.io/@_mung/TroubleShooting-MoodBuddy-Service-%EA%B3%84%EC%B8%B5%EC%9D%B4-%EB%AC%B4%EA%B2%81%EB%8B%A4%EB%A9%B4-Facade-%ED%8C%A8%ED%84%B4-%EC%96%B4%EB%95%8C
-  - 📍 동시에 여러 기기로 일기에 접근한다면..?
-    - https://velog.io/@_mung/TroubleShooting-MoodBuddy-%EB%8F%99%EC%8B%9C%EC%97%90-%EB%8B%A4%EB%A5%B8-%EA%B8%B0%EA%B8%B0-2%EB%8C%80%EB%A1%9C-%EC%9D%BC%EA%B8%B0%EC%97%90-%EC%A0%91%EA%B7%BC%ED%95%9C%EB%8B%A4%EB%A9%B4
-  - 📍 너의 쿼디티아이는 뭐니?!
-    - https://velog.io/@_mung/TroubleShooting-MoodBuddy-%EB%84%88%EC%9D%98-%EC%BF%BC%EB%94%94%ED%8B%B0%EC%95%84%EC%9D%B4%EB%8A%94-%EB%AD%90%EB%8B%88
-  - 📍 조회 속도를 높이기 위한 캐싱, 과연 정답일까?
-    - https://velog.io/@_mung/TroubleShooting-MoodBuddy-%EA%B0%9C%EC%9D%B8-%EA%B3%B5%EA%B0%84%EC%97%90%EC%84%9C%EC%9D%98-%EC%A1%B0%ED%9A%8C-%EC%96%B4%EB%96%BB%EA%B2%8C-%ED%95%B4%EC%95%BC-%ED%95%A0%EA%B9%8C
-  - 📍 Redis 캐시 전략 너무 오버스팩...?
-    - https://velog.io/@_mung/TroubleShooting-MoodBuddy-Redis-%EC%BA%90%EC%8B%9C-%EC%A0%84%EB%9E%B5-%EB%84%88%EB%AC%B4-%EC%98%A4%EB%B2%84%EC%8A%A4%ED%8C%A9 
+### 코드 라인 수 약 3배 단축 [🔗 벨로그 링크]([https://velog.io/@yourusername](https://velog.io/@_mung/TroubleShooting-MoodBuddy-Service-%EA%B3%84%EC%B8%B5%EC%9D%B4-%EB%AC%B4%EA%B2%81%EB%8B%A4%EB%A9%B4-Facade-%ED%8C%A8%ED%84%B4-%EC%96%B4%EB%95%8C))
+<img src="https://github.com/user-attachments/assets/9abae22c-ff2b-4454-96a1-890041e967f4" width="80%">
+### 낮은 동시성 환경에 맞춘 설계 [🔗 벨로그 링크]([https://velog.io/@_mung/TroubleShooting-MoodBuddy-%EB%8F%99%EC%8B%9C%EC%97%90-%EB%8B%A4%EB%A5%B8-%EA%B8%B0%EA%B8%B0-2%EB%8C%80%EB%A1%9C-%EC%9D%BC%EA%B8%B0%EC%97%90-%EC%A0%91%EA%B7%BC%ED%95%9C%EB%8B%A4%EB%A9%B4])
+<img src="https://github.com/user-attachments/assets/b083233f-0dc4-41dc-9121-ca1ea487d466" width="80%">
 
 ## ✨ 성능 개선
-- 정목(M-ung)
-  - 📍 일기 조회 시간 약 95.9% 단축 ♨️
-    -  https://velog.io/@_mung/%EC%84%B1%EB%8A%A5-%ED%85%8C%EC%8A%A4%ED%8A%B8-MoodBuddy
-  - 📍 90,000 쿼리 발생을 줄이다📉
-    -  https://velog.io/@_mung/%EC%84%B1%EB%8A%A5-%EA%B0%9C%EC%84%A0-MoodBuddy-90000-%EC%BF%BC%EB%A6%AC-%EB%B0%9C%EC%83%9D%EC%9D%84-%EC%A4%84%EC%9D%B4%EB%8B%A4
-  - 📍 32명의 사용자 피드백 "일기 저장 시간이 너무 길어요!!"
-    - https://velog.io/@_mung/%EC%84%B1%EB%8A%A5-%EA%B0%9C%EC%84%A0-MoodBuddy-32%EB%AA%85%EC%9D%98-%EC%82%AC%EC%9A%A9%EC%9E%90-%ED%94%BC%EB%93%9C%EB%B0%B1-%EC%9D%BC%EA%B8%B0-%EC%A0%80%EC%9E%A5-%EC%8B%9C%EA%B0%84%EC%9D%B4-%EB%84%88%EB%AC%B4-%EA%B8%B8%EC%96%B4%EC%9A%94 
+### 90,000건의 쿼리 단축 [🔗 벨로그 링크]([https://velog.io/@_mung/%EC%84%B1%EB%8A%A5-%EA%B0%9C%EC%84%A0-MoodBuddy-90000-%EC%BF%BC%EB%A6%AC-%EB%B0%9C%EC%83%9D%EC%9D%84-%EC%A4%84%EC%9D%B4%EB%8B%A4])
+<img src="https://github.com/user-attachments/assets/7ca8d206-558d-4347-b142-cbab39062fdd" width="80%">
+### 일기 조회 시간 약 95.9% 단축 [🔗 벨로그 링크]([https://velog.io/@_mung/%EC%84%B1%EB%8A%A5-%ED%85%8C%EC%8A%A4%ED%8A%B8-MoodBuddy])
+<img src="https://github.com/user-attachments/assets/4ed74165-bea1-4520-9c37-53f903b32a5e" width="80%">
+### 93.9% 일기 저장 시간 단축 [🔗 벨로그 링크]([https://velog.io/@_mung/%EC%84%B1%EB%8A%A5-%ED%85%8C%EC%8A%A4%ED%8A%B8-MoodBuddy])
+<img src="https://github.com/user-attachments/assets/d26b837b-a511-44c2-a945-09afc26fb759" width="80%">
+
