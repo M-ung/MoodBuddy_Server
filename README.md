@@ -74,7 +74,7 @@
 ![GIFMaker_me](https://github.com/user-attachments/assets/2a61f871-a1ca-402a-98a2-3643112e5b53)
 
 ## 🟢 ERD
-<img src="https://github.com/user-attachments/assets/6a2597eb-ea4e-4bee-93e8-77b6b2bfbadc" width="80%">
+<img src="https://github.com/user-attachments/assets/b81401d1-d2aa-4e2c-9f1e-eeb0980a4192" width="80%">
 
 ## 🛠️ 시스템 아키텍처 
 <img src="https://github.com/user-attachments/assets/7aa9fe26-97c0-4a53-af18-2d74fcc38e17" width="80%">
