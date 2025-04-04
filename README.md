@@ -119,14 +119,14 @@
     - https://velog.io/@_mung/TroubleShooting-MoodBuddy-%EB%8F%99%EC%8B%9C%EC%97%90-%EB%8B%A4%EB%A5%B8-%EA%B8%B0%EA%B8%B0-2%EB%8C%80%EB%A1%9C-%EC%9D%BC%EA%B8%B0%EC%97%90-%EC%A0%91%EA%B7%BC%ED%95%9C%EB%8B%A4%EB%A9%B4
   - 📍 너의 쿼디티아이는 뭐니?!
     - https://velog.io/@_mung/TroubleShooting-MoodBuddy-%EB%84%88%EC%9D%98-%EC%BF%BC%EB%94%94%ED%8B%B0%EC%95%84%EC%9D%B4%EB%8A%94-%EB%AD%90%EB%8B%88
-  - 📍 쿼리 수를 2번 -> 1번, 얼마나 달라진다고?!
-    - https://velog.io/@_mung/TroubleShooting-MoodBuddy-%EA%B0%9C%EC%9D%B8-%EA%B3%B5%EA%B0%84%EC%97%90%EC%84%9C%EC%9D%98-%EC%A1%B0%ED%9A%8C-%EC%96%B4%EB%96%BB%EA%B2%8C-%ED%95%B4%EC%95%BC-%ED%95%A0%EA%B9%8C-shken3hr
   - 📍 조회 속도를 높이기 위한 캐싱, 과연 정답일까?
     - https://velog.io/@_mung/TroubleShooting-MoodBuddy-%EA%B0%9C%EC%9D%B8-%EA%B3%B5%EA%B0%84%EC%97%90%EC%84%9C%EC%9D%98-%EC%A1%B0%ED%9A%8C-%EC%96%B4%EB%96%BB%EA%B2%8C-%ED%95%B4%EC%95%BC-%ED%95%A0%EA%B9%8C
+  - 📍 Redis 캐시 전략 너무 오버스팩...?
+    - https://velog.io/@_mung/TroubleShooting-MoodBuddy-Redis-%EC%BA%90%EC%8B%9C-%EC%A0%84%EB%9E%B5-%EB%84%88%EB%AC%B4-%EC%98%A4%EB%B2%84%EC%8A%A4%ED%8C%A9 
 
 ## ✨ 성능 개선
 - 정목(M-ung)
-  - 📍 응답 시간 95.9% 개선 ♨️
+  - 📍 일기 조회 시간 약 95.9% 단축 ♨️
     -  https://velog.io/@_mung/%EC%84%B1%EB%8A%A5-%ED%85%8C%EC%8A%A4%ED%8A%B8-MoodBuddy
   - 📍 90,000 쿼리 발생을 줄이다📉
     -  https://velog.io/@_mung/%EC%84%B1%EB%8A%A5-%EA%B0%9C%EC%84%A0-MoodBuddy-90000-%EC%BF%BC%EB%A6%AC-%EB%B0%9C%EC%83%9D%EC%9D%84-%EC%A4%84%EC%9D%B4%EB%8B%A4
