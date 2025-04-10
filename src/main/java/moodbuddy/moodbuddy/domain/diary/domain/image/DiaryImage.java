@@ -9,7 +9,12 @@ import moodbuddy.moodbuddy.global.common.base.type.MoodBuddyStatus;
 @Getter
 @Builder
 @AllArgsConstructor
-@Table(name = "diary_image")
+@Table(
+        name = "diary_image",
+        indexes = {
+                @Index(name = "idx_diary_id_mood_buddy_status", columnList = "diary_id, mood_buddy_status")
+        }
+)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class DiaryImage extends BaseTimeEntity {
     @Id

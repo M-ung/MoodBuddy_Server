@@ -12,7 +12,14 @@ import java.time.LocalDate;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@Table(name = "diary_query", uniqueConstraints = @UniqueConstraint(columnNames = {"userId", "date"}))
+@Table(
+        name = "diary_query",
+        uniqueConstraints = @UniqueConstraint(columnNames = {"userId", "date"}),
+        indexes = {
+                @Index(name = "idx_id_user_Id_mood_buddy_status", columnList = "diary_id, user_id, mood_buddy_status"),
+                @Index(name = "idx_user_Id_mood_buddy_status_date", columnList = "user_id, mood_buddy_status, date")
+        }
+)
 public class DiaryQuery {
     @Id
     @Column(name = "diary_id")
