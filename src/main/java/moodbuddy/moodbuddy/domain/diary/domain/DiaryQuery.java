@@ -16,7 +16,6 @@ import java.time.LocalDate;
         name = "diary_query",
         uniqueConstraints = @UniqueConstraint(columnNames = {"userId", "date"}),
         indexes = {
-                @Index(name = "idx_id_user_Id_mood_buddy_status", columnList = "diary_id, user_id, mood_buddy_status"),
                 @Index(name = "idx_user_Id_mood_buddy_status_date", columnList = "user_id, mood_buddy_status, date")
         }
 )
