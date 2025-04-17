@@ -2,6 +2,7 @@ package moodbuddy.moodbuddy.domain.draftDiary.service;
 
 import lombok.RequiredArgsConstructor;
 import moodbuddy.moodbuddy.domain.diary.domain.Diary;
+import moodbuddy.moodbuddy.domain.diary.exception.DiaryTodayExistingException;
 import moodbuddy.moodbuddy.domain.diary.repository.DiaryRepository;
 import moodbuddy.moodbuddy.domain.draftDiary.domain.DraftDiary;
 import moodbuddy.moodbuddy.domain.draftDiary.dto.request.DraftDiaryReqPublishDTO;
@@ -14,11 +15,14 @@ import moodbuddy.moodbuddy.global.common.base.type.MoodBuddyStatus;
 import moodbuddy.moodbuddy.global.error.ErrorCode;
 import moodbuddy.moodbuddy.domain.draftDiary.exception.DraftDiaryConcurrentUpdateException;
 import moodbuddy.moodbuddy.domain.draftDiary.exception.DraftDiaryNotFoundException;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.orm.ObjectOptimisticLockingFailureException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import java.time.LocalDate;
 import java.util.List;
+
+import static moodbuddy.moodbuddy.global.error.ErrorCode.DIARY_TODAY_EXISTING;
 import static moodbuddy.moodbuddy.global.error.ErrorCode.DRAFT_DIARY_NOT_FOUND;
 
 @Service
@@ -46,6 +50,8 @@ public class DraftDiaryServiceImpl implements DraftDiaryService {
             return diaryRepository.save(Diary.publish(userId, requestDTO)).getId();
         } catch (ObjectOptimisticLockingFailureException ex) {
             throw new DraftDiaryConcurrentUpdateException(ErrorCode.DRAFT_DIARY_CONCURRENT_UPDATE);
+        } catch (DataIntegrityViolationException e) {
+            throw new DiaryTodayExistingException(DIARY_TODAY_EXISTING);
         }
     }
 
