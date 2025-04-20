@@ -9,11 +9,11 @@ import moodbuddy.moodbuddy.domain.diary.dto.response.DiaryResDetailDTO;
 import moodbuddy.moodbuddy.domain.diary.exception.DiaryTodayExistingException;
 import moodbuddy.moodbuddy.domain.diary.exception.image.DiaryConcurrentDeleteException;
 import moodbuddy.moodbuddy.domain.diary.repository.DiaryRepository;
+import moodbuddy.moodbuddy.global.annotation.DiaryCacheEvict;
 import moodbuddy.moodbuddy.global.common.base.type.MoodBuddyStatus;
 import moodbuddy.moodbuddy.global.error.ErrorCode;
 import moodbuddy.moodbuddy.domain.diary.exception.DiaryConcurrentUpdateException;
 import moodbuddy.moodbuddy.domain.diary.exception.DiaryNotFoundException;
-import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.orm.ObjectOptimisticLockingFailureException;
 import org.springframework.stereotype.Service;
@@ -30,7 +30,7 @@ public class DiaryServiceImpl implements DiaryService {
 
     @Override
     @Transactional
-    @CacheEvict(cacheNames = "diaries", allEntries = true)
+    @DiaryCacheEvict
     public Diary save(final Long userId, DiaryReqSaveDTO requestDTO) {
         try{
             return diaryRepository.save(Diary.of(
@@ -43,7 +43,7 @@ public class DiaryServiceImpl implements DiaryService {
 
     @Override
     @Transactional
-    @CacheEvict(cacheNames = "diaries", allEntries = true)
+    @DiaryCacheEvict
     public Diary update(final Long userId, DiaryReqUpdateDTO requestDTO) {
         try {
             var findDiary = findDiaryById(userId, requestDTO.diaryId());
@@ -56,7 +56,7 @@ public class DiaryServiceImpl implements DiaryService {
 
     @Override
     @Transactional
-    @CacheEvict(cacheNames = "diaries", allEntries = true)
+    @DiaryCacheEvict
     public LocalDate delete(final Long userId, final Long diaryId) {
         try {
             final var findDiary = findDiaryById(userId, diaryId);

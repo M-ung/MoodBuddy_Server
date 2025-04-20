@@ -98,14 +98,17 @@ dependencies {
 
     // jdbc
     implementation("org.springframework.boot:spring-boot-starter-jdbc")
+
+    // caffeine
+    implementation 'com.github.ben-manes.caffeine:caffeine'
 }
 
 tasks.named('test') {
     useJUnitPlatform()
 }
 
-tasks.withType(JavaCompile).configureEach {
-    options.compilerArgs.add("-parameters")
+tasks.withType(JavaCompile) {
+    options.compilerArgs += "-parameters"
 }
 
 jar {

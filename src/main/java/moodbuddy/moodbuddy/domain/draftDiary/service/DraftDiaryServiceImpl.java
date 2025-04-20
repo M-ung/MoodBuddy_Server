@@ -11,6 +11,7 @@ import moodbuddy.moodbuddy.domain.draftDiary.dto.request.DraftDiaryReqSelectDele
 import moodbuddy.moodbuddy.domain.draftDiary.dto.response.DraftDiaryResDetailDTO;
 import moodbuddy.moodbuddy.domain.draftDiary.dto.response.DraftDiaryResFindOneDTO;
 import moodbuddy.moodbuddy.domain.draftDiary.repository.DraftDiaryRepository;
+import moodbuddy.moodbuddy.global.annotation.DiaryCacheEvict;
 import moodbuddy.moodbuddy.global.common.base.type.MoodBuddyStatus;
 import moodbuddy.moodbuddy.global.error.ErrorCode;
 import moodbuddy.moodbuddy.domain.draftDiary.exception.DraftDiaryConcurrentUpdateException;
@@ -21,7 +22,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import java.time.LocalDate;
 import java.util.List;
-
 import static moodbuddy.moodbuddy.global.error.ErrorCode.DIARY_TODAY_EXISTING;
 import static moodbuddy.moodbuddy.global.error.ErrorCode.DRAFT_DIARY_NOT_FOUND;
 
@@ -42,6 +42,7 @@ public class DraftDiaryServiceImpl implements DraftDiaryService {
 
     @Override
     @Transactional
+    @DiaryCacheEvict
     public Long publish(final Long userId, DraftDiaryReqPublishDTO requestDTO) {
         try {
             var findDraftDiary = findDraftDiaryById(userId, requestDTO.diaryId());

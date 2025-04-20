@@ -9,6 +9,7 @@ import moodbuddy.moodbuddy.domain.diary.dto.response.query.DiaryResQueryDTO;
 import moodbuddy.moodbuddy.domain.diary.exception.query.DiaryQueryNotFoundException;
 import moodbuddy.moodbuddy.domain.diary.repository.query.DiaryQueryRepository;
 import moodbuddy.moodbuddy.global.common.base.PageCustom;
+import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -20,6 +21,8 @@ import static moodbuddy.moodbuddy.global.error.ErrorCode.DIARY_NOT_FOUND;
 @RequiredArgsConstructor
 public class DiaryQueryServiceImpl implements DiaryQueryService {
     private final DiaryQueryRepository diaryQueryRepository;
+    private final CacheManager cacheManager;
+
 
     @Override
     @Cacheable(
@@ -28,6 +31,7 @@ public class DiaryQueryServiceImpl implements DiaryQueryService {
             unless = "#result == null"
     )
     public PageCustom<DiaryResQueryDTO> getDiaries(final Long userId, boolean isAscending, Pageable pageable) {
+        System.out.println("CacheManager class = " + cacheManager.getClass().getName());
         return diaryQueryRepository.findDiariesWithPageable(userId, isAscending, pageable);
     }
 

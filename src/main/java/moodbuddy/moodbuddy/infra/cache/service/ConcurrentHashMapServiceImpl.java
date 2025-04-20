@@ -4,14 +4,12 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.cache.Cache;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.concurrent.ConcurrentMapCache;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import java.util.concurrent.ConcurrentMap;
 
-@Primary
 @Service
 @RequiredArgsConstructor
-public class SpringCacheServiceImpl implements CacheService {
+public class ConcurrentHashMapServiceImpl implements CacheService {
     private final CacheManager cacheManager;
     private static final String DIARIES_CACHE_NAME = "diaries";
 
