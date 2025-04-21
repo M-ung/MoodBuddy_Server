@@ -34,6 +34,7 @@ public enum ErrorCode {
 
     /** Gpt **/
     GPT_PARSE_ERROR(422, "GPT-ERR-422", "Json 형태의 GPT 응답을 파싱하는 중 오류가 발생했습니다."),
+    GPT_BAD_REQUEST(400, "GPT-ERR-423", "OpenAI 호출 중 에러가 발생했습니다."),
 
     /** QuddyTI **/
     QUDDYTI_NOT_FOUND(400, "QUDDYTI-ERR-400", "쿼디티아이를 찾을 수 없습니다."),

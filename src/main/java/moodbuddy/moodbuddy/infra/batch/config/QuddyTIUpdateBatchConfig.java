@@ -45,7 +45,7 @@ public class QuddyTIUpdateBatchConfig {
     @Bean
     public Step quddyTIUpdateStep() {
         return new StepBuilder("quddyTIUpdateStep", jobRepository)
-                .<QuddyTI, QuddyTI>chunk(100, transactionManager)
+                .<QuddyTI, QuddyTI>chunk(1000, transactionManager)
                 .reader(quddyTIReader())
                 .processor(findCountProcessor())
                 .writer(updateQuddyTIWriter())

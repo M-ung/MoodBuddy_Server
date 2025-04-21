@@ -1,7 +1,7 @@
 package moodbuddy.moodbuddy.domain.diary.facade.analyze;
 
-import moodbuddy.moodbuddy.domain.diary.dto.response.emotion.DiaryResAnalyzeDTO;
+import reactor.core.publisher.Mono;
 
 public interface DiaryAnalyzeFacade {
-    DiaryResAnalyzeDTO analyze(Long diaryId);
+    Mono<Void> analyze(Long diaryId);
 }

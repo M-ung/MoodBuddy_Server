@@ -37,7 +37,7 @@ public class QuddyTICreateBatchConfig {
     @Bean
     public Step quddyTICreateStep() {
         return new StepBuilder("quddyTICreateStep", jobRepository)
-                .<Long, QuddyTI>chunk(100, transactionManager)
+                .<Long, QuddyTI>chunk(1000, transactionManager)
                 .reader(userIdReader())
                 .processor(createQuddyTIProcessor())
                 .writer(saveQuddyTIWriter())

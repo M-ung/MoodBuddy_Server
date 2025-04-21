@@ -6,10 +6,10 @@ import moodbuddy.moodbuddy.global.error.MoodBuddyException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-@ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
+@ResponseStatus(HttpStatus.BAD_REQUEST)
 @Getter
-public class ParsingContentException extends MoodBuddyException {
-    public ParsingContentException(final ErrorCode errorCode) {
+public class GptAnalyzeFailException extends MoodBuddyException {
+    public GptAnalyzeFailException(final ErrorCode errorCode) {
         super(errorCode);
     }
 }

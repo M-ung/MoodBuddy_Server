@@ -7,7 +7,8 @@ public enum DiaryEmotion {
     FEAR("F"),
     NEUTRAL("N"),
     SADNESS("Sa"),
-    SURPRISE("Su");
+    SURPRISE("Su"),
+    FAILED("Fail");
 
     private final String abbreviation;
 
