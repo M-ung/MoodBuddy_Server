@@ -59,6 +59,8 @@ public class QuddyTIBatchJDBCRepository {
     }
 
     public void bulkUpdate(List<? extends QuddyTI> items) {
+        if (items == null || items.isEmpty()) return;
+
         String sql = """
         UPDATE quddy_ti SET 
             diary_frequency = ?, daily_count = ?, growth_count = ?, emotion_count = ?, travel_count = ?, 
@@ -95,6 +97,8 @@ public class QuddyTIBatchJDBCRepository {
         });
     }
     public void bulkSave(List<? extends QuddyTI> items) {
+        if (items == null || items.isEmpty()) return;
+
         String sql = """
             INSERT INTO quddy_ti (
                 user_id, quddy_ti_year, quddy_ti_month, diary_frequency, daily_count, growth_count,
